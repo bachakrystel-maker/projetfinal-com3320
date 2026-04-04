@@ -1,22 +1,50 @@
-// Données scientifiques détaillées pour l'interactivité
-const infoData = {
-    amygdale: "<strong>L'AMYGDALE (Le Détecteur) :</strong> Elle est le centre de traitement des émotions. En cas de stress, elle s'hyperactive pour envoyer un signal de détresse à l'hypothalamus, court-circuitant l'analyse rationnelle.",
-    hypo: "<strong>L'HYPOTHALAMUS (Le Commandant) :</strong> Il reçoit le signal de l'amygdale et active le système nerveux sympathique. Il agit comme un centre de commande qui libère les premières hormones de stress.",
-    pfc: "<strong>LE CORTEX PRÉFRONTAL (Le Modérateur) :</strong> C'est la zone du raisonnement. Son rôle est normalement de calmer l'amygdale. En cas de stress intense, il est 'déconnecté', rendant la pensée logique difficile."
+// 1. Animation d'apparition au défilement (Scroll Reveal)
+// Pour que les cartes de texte apparaissent doucement quand on descend
+const observerOptions = {
+    threshold: 0.1
 };
 
-function revealInfo(key) {
-    const box = document.getElementById('bio-result');
-    box.style.opacity = "0";
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+        }
+    });
+}, observerOptions);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = document.querySelectorAll('.card');
+    cards.forEach(card => {
+        // État initial avant l'animation
+        card.style.opacity = "0";
+        card.style.transform = "translateY(20px)";
+        card.style.transition = "all 0.8s ease-out";
+        observer.observe(card);
+    });
+});
+
+// 2. Simulation interactive de Dopamine
+// À utiliser sur la page "Mécanisme" ou "Addiction"
+function simulerDopamine() {
+    const btn = document.querySelector('.btn-next');
+    
+    // Effet visuel de "flash" de satisfaction
+    document.body.style.backgroundColor = "#eef2ff"; 
     setTimeout(() => {
-        box.innerHTML = infoData[key];
-        box.style.opacity = "1";
-        box.style.backgroundColor = "#fff";
-        box.style.borderStyle = "solid";
+        document.body.style.backgroundColor = "#f8fafc";
     }, 200);
+
+    console.log("Système de récompense activé !");
 }
 
-// Fonction de navigation
-function scrollToSection(id) {
-    document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
-}
+// 3. Feedback visuel sur le menu
+// Pour que l'utilisateur sache toujours où il se situe
+const currentPath = window.location.pathname;
+const navLinks = document.querySelectorAll('.nav-menu a');
+
+navLinks.forEach(link => {
+    if (currentPath.includes(link.getAttribute('href'))) {
+        link.classList.add('active');
+    }
+});
