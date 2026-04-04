@@ -1,50 +1,42 @@
-// 1. Animation d'apparition au défilement (Scroll Reveal)
-// Pour que les cartes de texte apparaissent doucement quand on descend
-const observerOptions = {
-    threshold: 0.1
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = "1";
-            entry.target.style.transform = "translateY(0)";
-        }
-    });
-}, observerOptions);
-
+// 1. Animation d'entrée des cartes (Apparition décalée)
 document.addEventListener("DOMContentLoaded", () => {
     const cards = document.querySelectorAll('.card');
-    cards.forEach(card => {
-        // État initial avant l'animation
+    cards.forEach((card, index) => {
+        // On prépare l'état initial
         card.style.opacity = "0";
-        card.style.transform = "translateY(20px)";
-        card.style.transition = "all 0.8s ease-out";
-        observer.observe(card);
+        card.style.transform = "translateY(30px)";
+        card.style.transition = "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)"; // Effet de rebond léger
+
+        // On déclenche l'animation avec un petit délai entre chaque carte
+        setTimeout(() => {
+            card.style.opacity = "1";
+            card.style.transform = "translateY(0)";
+        }, index * 200);
     });
 });
 
-// 2. Simulation interactive de Dopamine
-// À utiliser sur la page "Mécanisme" ou "Addiction"
-function simulerDopamine() {
-    const btn = document.querySelector('.btn-next');
-    
-    // Effet visuel de "flash" de satisfaction
-    document.body.style.backgroundColor = "#eef2ff"; 
-    setTimeout(() => {
-        document.body.style.backgroundColor = "#f8fafc";
-    }, 200);
+// 2. Interaction de "Récompense" sur les boutons
+// Ajoute un petit effet visuel quand on clique sur "SUIVANT"
+const nextButtons = document.querySelectorAll('.btn-next');
+nextButtons.forEach(btn => {
+    btn.addEventListener('click', function() {
+        // Simule un flash de dopamine visuel
+        document.body.style.backgroundColor = "#fff";
+        setTimeout(() => {
+            document.body.style.backgroundColor = "#f3f4f6";
+        }, 100);
+    });
+});
 
-    console.log("Système de récompense activé !");
-}
-
-// 3. Feedback visuel sur le menu
-// Pour que l'utilisateur sache toujours où il se situe
-const currentPath = window.location.pathname;
+// 3. Gestion dynamique du menu actif
+// S'assure que l'onglet sur lequel on est reste bien en couleur
+const currentUrl = window.location.href;
 const navLinks = document.querySelectorAll('.nav-menu a');
 
 navLinks.forEach(link => {
-    if (currentPath.includes(link.getAttribute('href'))) {
+    if (currentUrl.includes(link.getAttribute('href'))) {
         link.classList.add('active');
+    } else {
+        link.classList.remove('active');
     }
 });
