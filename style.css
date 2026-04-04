@@ -9,7 +9,7 @@
 * { box-sizing: border-box; }
 
 body {
-    font-family: 'Arial Black', sans-serif; /* Typo forte */
+    font-family: 'Arial Black', sans-serif;
     background-color: var(--bg);
     color: var(--black);
     margin: 0;
@@ -34,42 +34,42 @@ nav {
 
 .nav-menu a {
     text-decoration: none; color: var(--black);
-    font-weight: 900; margin-left: 15px;
-    padding: 8px 15px; border: 3px solid var(--black);
+    font-weight: 900; margin-left: 10px;
+    padding: 8px 12px; border: 3px solid var(--black);
     box-shadow: 4px 4px 0px var(--black);
     background: var(--white);
+    font-size: 0.9rem;
 }
 
 .nav-menu a.active { background: var(--dopa-purple); color: white; }
 .nav-menu a:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0px var(--black); }
 
-/* Hero Section d'impact */
+/* Hero Section */
 .hero {
     background: var(--dopa-blue);
     border-bottom: 5px solid var(--black);
-    padding: 80px 20px; text-align: center;
+    padding: 60px 20px; text-align: center;
     color: var(--white);
 }
 
 .hero h1 { 
-    font-size: 5rem; margin: 0; 
-    text-shadow: 5px 5px 0px var(--black);
-    -webkit-text-stroke: 2px var(--black);
+    font-size: 4rem; margin: 0; 
+    text-shadow: 4px 4px 0px var(--black);
+    -webkit-text-stroke: 1px var(--black);
 }
 
-/* Container & Cards Brutalistes */
-.container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
+/* Container & Cards */
+.container { max-width: 900px; margin: 40px auto; padding: 0 20px; }
 
 .card {
     background: var(--white);
     border: 5px solid var(--black);
-    box-shadow: 15px 15px 0px var(--black); /* L'ombre culte */
-    padding: 40px; margin-bottom: 60px;
-    border-radius: 0px; /* On reste sur des angles vifs */
+    box-shadow: 12px 12px 0px var(--black);
+    padding: 40px; margin-bottom: 50px;
 }
 
 h2 { 
-    font-size: 2.5rem; text-transform: uppercase;
+    font-size: 2rem; text-transform: uppercase;
     background: var(--dopa-purple); display: inline-block;
     padding: 5px 15px; border: 3px solid var(--black);
     margin-bottom: 25px; color: white;
@@ -77,14 +77,13 @@ h2 {
 
 p { font-family: 'Helvetica', sans-serif; font-weight: bold; font-size: 1.1rem; }
 
-/* Bouton Next Brutaliste */
 .btn-next {
-    display: inline-block; background: #10b981; /* Vert "Go" */
-    color: var(--black); padding: 20px 35px;
+    display: inline-block; background: #10b981;
+    color: var(--black); padding: 15px 30px;
     border: 4px solid var(--black); font-weight: 900;
     text-decoration: none; text-transform: uppercase;
-    box-shadow: 8px 8px 0px var(--black);
-    margin-top: 30px;
+    box-shadow: 6px 6px 0px var(--black);
+    margin-top: 20px;
 }
 
-.btn-next:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0px var(--black); }
+.btn-next:hover { transform: translate(-3px, -3px); box-shadow: 9px 9px 0px var(--black); }
