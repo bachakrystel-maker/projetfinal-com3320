@@ -2,34 +2,40 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | 03. MÉCANISME</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DOPAMINE | Mécanisme</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
+        :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
+        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 15px; text-align: center; }
+        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 10px; }
+        .nav-menu a.active { background: var(--blue); color: white; }
+        .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
+        .container { max-width: 850px; margin: -30px auto 60px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .highlight { background: #dcfce7; padding: 5px 10px; border-radius: 5px; font-weight: bold; color: #166534; }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="nav-container">
-            <span class="nav-brand">DOPAMINE.LAB</span>
-            <div class="nav-menu">
-                <a href="index.html">ACCUEIL</a>
-                <a href="anatomie.html">01. ANATOMIE</a>
-                <a href="chimie.html">02. CHIMIE</a>
-                <a href="mecanisme.html" class="active">03. MÉCANISME</a>
-                <a href="addiction.html">04. ADDICTION</a>
-            </div>
+        <div class="nav-menu">
+            <a href="index.html">ACCUEIL</a>
+            <a href="anatomie.html">01. ANATOMIE</a>
+            <a href="chimie.html">02. CHIMIE</a>
+            <a href="mecanisme.html" class="active">03. MÉCANISME</a>
+            <a href="addiction.html">04. ADDICTION</a>
         </div>
     </nav>
-
     <header class="hero">
-        <h1>LE MÉCANISME</h1>
-        <p>L'anticipation de la récompense.</p>
+        <h1>L'Erreur de Prédiction</h1>
+        <p>Pourquoi l'attente est plus forte que la possession.</p>
     </header>
-
     <main class="container">
         <div class="card">
-            <h2>03. L'ENVIE</h2>
-            <p>La dopamine n'est pas la molécule du plaisir obtenu, mais celle de l'attente.</p>
-            <p><strong>RECHERCHE À INTÉGRER :</strong> Travaux de Wolfram Schultz sur l'erreur de prédiction.</p>
-            <a href="addiction.html" class="btn-next">SUIVANT : L'ADDICTION →</a>
+            <h2>L'expérience de Schultz</h2>
+            <p>Le neuroscientifique <span class="highlight">Wolfram Schultz</span> a révolutionné notre compréhension de la dopamine. Il a découvert que les neurones dopaminergiques ne s'activent pas quand on reçoit une récompense attendue, mais au moment du <strong>signal</strong> qui l'annonce.</p>
+            <p>Si vous attendez un café, le pic de dopamine arrive quand vous entendez la machine démarrer, pas quand vous buvez la première gorgée. C'est l'essence de la motivation : la dopamine est une molécule de <strong>prédiction</strong>.</p>
+            <p><strong>L'effet de surprise :</strong> Si la récompense est meilleure que prévue (une promotion inattendue), le pic de dopamine est immense. Si elle est moins bonne, la dopamine chute sous son niveau de base, créant une sensation de malaise ou de déception. C'est ce mécanisme qui nous force à apprendre et à ajuster nos comportements.</p>
         </div>
     </main>
 </body>
