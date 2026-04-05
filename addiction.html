@@ -2,34 +2,42 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | 04. ADDICTION</title>
-    <link rel="stylesheet" href="style.css">
+    <title>DOPAMINE | Addiction</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
+        :root { --bg: #fef2f2; --red: #ef4444; --dark: #1e293b; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
+        nav { background: white; border-bottom: 2px solid #fecaca; padding: 15px; text-align: center; }
+        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 10px; }
+        .nav-menu a.active { background: var(--red); color: white; }
+        .hero { background: linear-gradient(135deg, #ef4444, #991b1b); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
+        .container { max-width: 850px; margin: -30px auto 60px auto; padding: 0 20px; }
+        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .warning { border: 2px dashed var(--red); padding: 20px; border-radius: 15px; margin-top: 20px; color: #991b1b; font-weight: bold; }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="nav-container">
-            <span class="nav-brand">DOPAMINE.LAB</span>
-            <div class="nav-menu">
-                <a href="index.html">ACCUEIL</a>
-                <a href="anatomie.html">01. ANATOMIE</a>
-                <a href="chimie.html">02. CHIMIE</a>
-                <a href="mecanisme.html">03. MÉCANISME</a>
-                <a href="addiction.html" class="active">04. ADDICTION</a>
-            </div>
+        <div class="nav-menu">
+            <a href="index.html">ACCUEIL</a>
+            <a href="anatomie.html">01. ANATOMIE</a>
+            <a href="chimie.html">02. CHIMIE</a>
+            <a href="mecanisme.html">03. MÉCANISME</a>
+            <a href="addiction.html" class="active">04. ADDICTION</a>
         </div>
     </nav>
-
     <header class="hero">
-        <h1>L'ADDICTION</h1>
-        <p>Le piratage de nos circuits.</p>
+        <h1>Le Piratage du Circuit</h1>
+        <p>Des machines à sous aux réseaux sociaux.</p>
     </header>
-
     <main class="container">
         <div class="card">
-            <h2>04. LE PIRATAGE</h2>
-            <p>Comment les réseaux sociaux exploitent notre biologie.</p>
-            <p><strong>RECHERCHE À INTÉGRER :</strong> Récompenses variables et désensibilisation des récepteurs.</p>
-            <a href="index.html" class="btn-next">RETOUR À L'ACCUEIL ↑</a>
+            <h2>L'économie de l'attention</h2>
+            <p>Les concepteurs d'applications utilisent une faille de notre cerveau appelée <strong>récompense variable</strong>. Comme une machine à sous, vous ne savez jamais si le prochain "scroll" vous apportera une vidéo intéressante ou un like. Cette incertitude crée une libération constante de dopamine, vous rendant "accro" au geste lui-même.</p>
+            <div class="warning">
+                Le danger de l'hyper-stimulation : À force de solliciter le circuit, le cerveau réduit le nombre de récepteurs à la dopamine pour se protéger. C'est la tolérance : il faut scroller plus, plus longtemps, pour ne serait-ce que se sentir "normal".
+            </div>
+            <p style="margin-top:20px;">Ce site n'est pas une condamnation de la technologie, mais une invitation à comprendre les leviers biologiques qui nous manipulent. En connaissant le circuit, on peut reprendre le contrôle.</p>
         </div>
     </main>
 </body>
