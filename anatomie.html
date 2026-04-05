@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | 01. ANATOMIE</title>
+    <title>DOPAMINE | ANATOMIE</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
 </head>
@@ -19,48 +19,44 @@
             </div>
         </div>
     </nav>
-
     <header class="hero">
         <h1>L'ANATOMIE</h1>
-        <p>Explorez le circuit de la récompense.</p>
+        <p>Cliquez sur les zones pour explorer le cerveau.</p>
     </header>
-
     <main class="container">
-        <div class="card-bento">
+        <div class="card bento-grid">
             <div class="scheme-container">
                 <svg id="brain-map" viewBox="0 0 500 350">
                     <path d="M100,200 C100,100 200,50 300,50 C400,50 450,150 450,220 C450,280 380,300 300,300 C220,300 150,280 100,250 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="3"/>
-                    <g id="atv-zone" class="clickable-zone">
+                    <g id="atv-zone" style="cursor:pointer">
                         <circle cx="280" cy="220" r="20" fill="#3b82f6"/>
                         <text x="280" y="225" text-anchor="middle" fill="white" font-weight="bold" font-size="12">ATV</text>
                     </g>
-                    <g id="accumbens-zone" class="clickable-zone">
+                    <g id="accumbens-zone" style="cursor:pointer">
                         <circle cx="240" cy="180" r="20" fill="#10b981"/>
                         <text x="240" y="185" text-anchor="middle" fill="white" font-weight="bold" font-size="12">NAc</text>
                     </g>
                 </svg>
             </div>
-
             <div id="info-panel" class="info-panel hidden">
                 <h3 id="panel-title">Zone</h3>
-                <p id="panel-text">Cliquez sur une zone pour voir la description.</p>
+                <p id="panel-text">Chargement...</p>
             </div>
         </div>
     </main>
-
     <script>
         const zoneData = {
-            'atv-zone': { title: "Aire Tegmentale Ventrale", text: "Point de départ de la dopamine pour signaler une récompense." },
-            'accumbens-zone': { title: "Noyau Accumbens", text: "Centre majeur du plaisir et de la motivation." }
+            'atv-zone': { title: "Aire Tegmentale Ventrale", text: "Point de départ de la dopamine." },
+            'accumbens-zone': { title: "Noyau Accumbens", text: "Centre majeur du plaisir." }
         };
-
-        document.querySelectorAll('.clickable-zone').forEach(zone => {
-            zone.addEventListener('click', () => {
-                document.getElementById('panel-title').innerText = zoneData[zone.id].title;
-                document.getElementById('panel-text').innerText = zoneData[zone.id].text;
-                document.getElementById('info-panel').classList.remove('hidden');
-            });
-        });
+        document.getElementById('atv-zone').onclick = () => showInfo('atv-zone');
+        document.getElementById('accumbens-zone').onclick = () => showInfo('accumbens-zone');
+        
+        function showInfo(id) {
+            document.getElementById('panel-title').innerText = zoneData[id].title;
+            document.getElementById('panel-text').innerText = zoneData[id].text;
+            document.getElementById('info-panel').classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
