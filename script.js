@@ -1,42 +1,43 @@
-// 1. Animation d'entrée des cartes (Apparition décalée)
-document.addEventListener("DOMContentLoaded", () => {
-    const cards = document.querySelectorAll('.card');
-    cards.forEach((card, index) => {
-        // On prépare l'état initial
-        card.style.opacity = "0";
-        card.style.transform = "translateY(30px)";
-        card.style.transition = "all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)"; // Effet de rebond léger
+// --- Script pour le Schéma Interactif ---
 
-        // On déclenche l'animation avec un petit délai entre chaque carte
-        setTimeout(() => {
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0)";
-        }, index * 200);
-    });
-});
-
-// 2. Interaction de "Récompense" sur les boutons
-// Ajoute un petit effet visuel quand on clique sur "SUIVANT"
-const nextButtons = document.querySelectorAll('.btn-next');
-nextButtons.forEach(btn => {
-    btn.addEventListener('click', function() {
-        // Simule un flash de dopamine visuel
-        document.body.style.backgroundColor = "#fff";
-        setTimeout(() => {
-            document.body.style.backgroundColor = "#f3f4f6";
-        }, 100);
-    });
-});
-
-// 3. Gestion dynamique du menu actif
-// S'assure que l'onglet sur lequel on est reste bien en couleur
-const currentUrl = window.location.href;
-const navLinks = document.querySelectorAll('.nav-menu a');
-
-navLinks.forEach(link => {
-    if (currentUrl.includes(link.getAttribute('href'))) {
-        link.classList.add('active');
-    } else {
-        link.classList.remove('active');
+// 1. Définition des textes (Content Management)
+// À modifier avec les recherches réelles de ton équipe !
+const zoneData = {
+    'atv-zone': {
+        title: "Aire Tegmentale Ventrale (ATV)",
+        text: "L'ATV est l'un des principaux points de départ de la dopamine. C'est ici que sont situés les corps cellulaires des neurones dopaminergiques qui projettent vers le noyau accumbens. Elle s'active dès qu'un signal annonce une récompense potentielle."
+    },
+    'accumbens-zone': {
+        title: "Noyau Accumbens",
+        text: "Souvent appelé 'le centre du plaisir', le noyau accumbens est la station d'arrivée de la dopamine. Il est crucial pour la motivation, l'apprentissage de l'habitude et la sensation de récompense. Les addictions 'piratent' cette zone en y libérant massivement de la dopamine."
     }
+};
+
+// 2. Écouteur de clics sur le SVG
+document.addEventListener("DOMContentLoaded", () => {
+    const clickableZones = document.querySelectorAll('.clickable-zone');
+    const infoPanel = document.getElementById('info-panel');
+    const panelTitle = document.getElementById('panel-title');
+    const panelText = document.getElementById('panel-text');
+    const closeBtn = document.getElementById('close-panel');
+
+    clickableZones.forEach(zone => {
+        zone.addEventListener('click', () => {
+            const data = zoneData[zone.id]; // Récupère les infos selon l'ID cliqué
+            
+            if (data) {
+                // Met à jour le contenu du panneau
+                panelTitle.innerText = data.title;
+                panelText.innerText = data.text;
+                
+                // Affiche le panneau
+                infoPanel.classList.remove('hidden');
+            }
+        });
+    });
+
+    // 3. Fermeture du panneau
+    closeBtn.addEventListener('click', () => {
+        infoPanel.classList.add('hidden');
+    });
 });
