@@ -4,7 +4,19 @@
     <meta charset="UTF-8">
     <title>DOPAMINE | 01. ANATOMIE</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        .card-bento { background: #fff; border-radius: 40px; padding: 40px; border: 1px solid #d1fae5; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .scheme-container { background: #f8fafc; border-radius: 20px; padding: 20px; border: 1px solid #d1fae5; display: flex; justify-content: center; }
+        #brain-map { width: 100%; max-width: 500px; height: auto; }
+        .clickable-zone { cursor: pointer; transition: transform 0.3s ease; }
+        .clickable-zone:hover { transform: scale(1.05); transform-origin: center; filter: brightness(1.1); }
+        .info-panel { background: #f0fdfa; border-radius: 20px; padding: 25px; border: 2px solid #3b82f6; min-height: 200px; }
+        .info-panel.hidden { display: none; }
+        h3 { color: #3b82f6; margin-top: 0; }
+        .close-btn { float: right; cursor: pointer; font-weight: bold; color: #94a3b8; }
+    </style>
+</head>
 <body>
     <nav>
         <div class="nav-container">
@@ -18,53 +30,47 @@
             </div>
         </div>
     </nav>
-
     <header class="hero">
         <h1>L'ANATOMIE</h1>
-        <p>Explorez le circuit de la récompense.</p>
+        <p>Cliquez sur les zones pour explorer le cerveau.</p>
     </header>
-
     <main class="container">
-        <div class="card bento-grid">
-            
-            <div class="bento-item item-full text-center">
-                <h2>OÙ ÇA SE PASSE ?</h2>
-                <p>Cliquez sur les zones colorées du schéma pour découvrir le rôle de chaque acteur de la dopamine.</p>
-            </div>
-
-            <div class="bento-item item-two-thirds scheme-container">
-                <svg id="brain-map" viewBox="0 0 500 350" preserveAspectRatio="xMidYMid meet">
-                    <defs>
-                        <filter id="shadow">
-                            <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="rgba(0,0,0,0.1)"/>
-                        </filter>
-                    </defs>
-                    <ellipse cx="250" cy="175" rx="200" ry="150" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
-                    
-                    <circle id="atv-zone" class="clickable-zone" cx="230" cy="220" r="15" fill="#3b82f6" opacity="0.8"/>
-                    
-                    <circle id="accumbens-zone" class="clickable-zone" cx="270" cy="190" r="15" fill="#10b981" opacity="0.8"/>
-                    
-                    <text x="210" y="225" font-family="Quicksand" font-size="12" fill="#fff" font-weight="bold">ATV</text>
-                    <text x="250" y="195" font-family="Quicksand" font-size="12" fill="#fff" font-weight="bold">Nac</text>
+        <div class="card-bento">
+            <div class="scheme-container">
+                <svg id="brain-map" viewBox="0 0 500 350">
+                    <path d="M100,200 C100,100 200,50 300,50 C400,50 450,150 450,220 C450,280 380,300 300,300 C220,300 150,280 100,250 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="3"/>
+                    <g id="atv-zone" class="clickable-zone">
+                        <circle cx="280" cy="220" r="20" fill="#3b82f6"/>
+                        <text x="280" y="225" text-anchor="middle" fill="white" font-weight="bold" font-size="12">ATV</text>
+                    </g>
+                    <g id="accumbens-zone" class="clickable-zone">
+                        <circle cx="240" cy="180" r="20" fill="#10b981"/>
+                        <text x="240" y="185" text-anchor="middle" fill="white" font-weight="bold" font-size="12">NAc</text>
+                    </g>
                 </svg>
             </div>
-
-            <div id="info-panel" class="bento-item item-one-third info-panel hidden">
-                <div class="panel-content">
-                    <span id="close-panel" class="close-btn">&times;</span>
-                    <h3 id="panel-title">Titre de la zone</h3>
-                    <p id="panel-text">Texte explicatif à l'endroit. C'est ici que tes coéquipières mettront leurs recherches !</p>
-                </div>
+            <div id="info-panel" class="info-panel hidden">
+                <span id="close-panel" class="close-btn">X</span>
+                <h3 id="panel-title">Titre</h3>
+                <p id="panel-text">Description...</p>
             </div>
-
-            <div class="bento-item item-full text-right mt-30">
-                <a href="chimie.html" class="btn-next">SUIVANT : LA CHIMIE →</a>
-            </div>
-
         </div>
     </main>
-
-    <script src="script.js"></script>
+    <script>
+        const zoneData = {
+            'atv-zone': { title: "Aire Tegmentale Ventrale", text: "C'est ici que la dopamine est produite en premier lieu pour signaler une récompense." },
+            'accumbens-zone': { title: "Noyau Accumbens", text: "Le centre du plaisir et de la motivation. Il reçoit la dopamine et crée l'envie d'agir." }
+        };
+        document.querySelectorAll('.clickable-zone').forEach(zone => {
+            zone.addEventListener('click', () => {
+                document.getElementById('panel-title').innerText = zoneData[zone.id].title;
+                document.getElementById('panel-text').innerText = zoneData[zone.id].text;
+                document.getElementById('info-panel').classList.remove('hidden');
+            });
+        });
+        document.getElementById('close-panel').addEventListener('click', () => {
+            document.getElementById('info-panel').classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
