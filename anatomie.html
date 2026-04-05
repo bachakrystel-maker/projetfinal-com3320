@@ -5,17 +5,6 @@
     <title>DOPAMINE | 01. ANATOMIE</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
-    <style>
-        .card-bento { background: #fff; border-radius: 40px; padding: 40px; border: 1px solid #d1fae5; display: grid; grid-template-columns: 2fr 1fr; gap: 30px; align-items: start; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .scheme-container { background: #f8fafc; border-radius: 20px; padding: 20px; border: 1px solid #d1fae5; display: flex; justify-content: center; }
-        #brain-map { width: 100%; max-width: 500px; height: auto; }
-        .clickable-zone { cursor: pointer; transition: transform 0.3s ease; }
-        .clickable-zone:hover { transform: scale(1.05); transform-origin: center; filter: brightness(1.1); }
-        .info-panel { background: #f0fdfa; border-radius: 20px; padding: 25px; border: 2px solid #3b82f6; min-height: 200px; }
-        .info-panel.hidden { display: none; }
-        h3 { color: #3b82f6; margin-top: 0; }
-        .close-btn { float: right; cursor: pointer; font-weight: bold; color: #94a3b8; }
-    </style>
 </head>
 <body>
     <nav>
@@ -30,10 +19,12 @@
             </div>
         </div>
     </nav>
+
     <header class="hero">
         <h1>L'ANATOMIE</h1>
-        <p>Cliquez sur les zones pour explorer le cerveau.</p>
+        <p>Explorez le circuit de la récompense.</p>
     </header>
+
     <main class="container">
         <div class="card-bento">
             <div class="scheme-container">
@@ -49,27 +40,26 @@
                     </g>
                 </svg>
             </div>
+
             <div id="info-panel" class="info-panel hidden">
-                <span id="close-panel" class="close-btn">X</span>
-                <h3 id="panel-title">Titre</h3>
-                <p id="panel-text">Description...</p>
+                <h3 id="panel-title">Zone</h3>
+                <p id="panel-text">Cliquez sur une zone pour voir la description.</p>
             </div>
         </div>
     </main>
+
     <script>
         const zoneData = {
-            'atv-zone': { title: "Aire Tegmentale Ventrale", text: "C'est ici que la dopamine est produite en premier lieu pour signaler une récompense." },
-            'accumbens-zone': { title: "Noyau Accumbens", text: "Le centre du plaisir et de la motivation. Il reçoit la dopamine et crée l'envie d'agir." }
+            'atv-zone': { title: "Aire Tegmentale Ventrale", text: "Point de départ de la dopamine pour signaler une récompense." },
+            'accumbens-zone': { title: "Noyau Accumbens", text: "Centre majeur du plaisir et de la motivation." }
         };
+
         document.querySelectorAll('.clickable-zone').forEach(zone => {
             zone.addEventListener('click', () => {
                 document.getElementById('panel-title').innerText = zoneData[zone.id].title;
                 document.getElementById('panel-text').innerText = zoneData[zone.id].text;
                 document.getElementById('info-panel').classList.remove('hidden');
             });
-        });
-        document.getElementById('close-panel').addEventListener('click', () => {
-            document.getElementById('info-panel').classList.add('hidden');
         });
     </script>
 </body>
