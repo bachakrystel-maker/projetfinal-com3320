@@ -3,31 +3,77 @@
 <head>
     <meta charset="UTF-8">
     <title>DOPAMINE | ACCUEIL</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
+        
+        :root {
+            --bg: #f0fdfa;
+            --blue: #3b82f6;
+            --green: #10b981;
+        }
+
+        body {
+            font-family: 'Quicksand', sans-serif;
+            background-color: var(--bg);
+            margin: 0; color: #0f172a;
+        }
+
+        nav {
+            background: white; border-bottom: 2px solid #d1fae5;
+            padding: 15px 0; display: flex; justify-content: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none; color: #64748b; font-weight: 700;
+            margin: 0 10px; padding: 10px 15px; border-radius: 10px;
+        }
+
+        .nav-menu a.active { background: var(--blue); color: white; }
+
+        .hero {
+            background: linear-gradient(135deg, var(--blue), var(--green));
+            color: white; padding: 80px 20px; text-align: center;
+            border-bottom-left-radius: 40px; border-bottom-right-radius: 40px;
+        }
+
+        .hero h1 { font-size: 4rem; margin: 0; font-weight: 900; }
+
+        .container { max-width: 800px; margin: -40px auto 50px auto; padding: 0 20px; }
+
+        .card {
+            background: white; border-radius: 30px; padding: 40px;
+            box-shadow: 0 20px 25px rgba(0,0,0,0.05); border: 1px solid #d1fae5;
+            text-align: center;
+        }
+
+        .btn-next {
+            display: inline-block; background: var(--blue); color: white;
+            padding: 18px 40px; border-radius: 50px; text-decoration: none;
+            font-weight: 800; margin-top: 20px; text-transform: uppercase;
+        }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="nav-container">
-            <span class="nav-brand">DOPAMINE.LAB</span>
-            <div class="nav-menu">
-                <a href="index.html" class="active">ACCUEIL</a>
-                <a href="anatomie.html">01. ANATOMIE</a>
-                <a href="chimie.html">02. CHIMIE</a>
-                <a href="mecanisme.html">03. MÉCANISME</a>
-                <a href="addiction.html">04. ADDICTION</a>
-            </div>
+        <div class="nav-menu">
+            <a href="index.html" class="active">ACCUEIL</a>
+            <a href="anatomie.html">01. ANATOMIE</a>
+            <a href="chimie.html">02. CHIMIE</a>
+            <a href="mecanisme.html">03. MÉCANISME</a>
+            <a href="addiction.html">04. ADDICTION</a>
         </div>
     </nav>
+
     <header class="hero">
         <h1>DOPAMINE</h1>
-        <p>Plus qu'un plaisir, une poursuite infinie.</p>
+        <p>Le moteur de vos envies.</p>
     </header>
+
     <main class="container">
         <div class="card">
             <h2>BIENVENUE</h2>
-            <p>Pourquoi ne pouvons-nous pas nous empêcher de vérifier nos notifications ? Ce site explore la molécule qui dicte nos envies.</p>
-            <a href="anatomie.html" class="btn-next">DÉCOUVRIR LE CIRCUIT →</a>
+            <p>Découvrez comment une simple molécule contrôle votre motivation et vos comportements.</p>
+            <a href="anatomie.html" class="btn-next">COMMENCER L'EXPLORATION →</a>
         </div>
     </main>
 </body>
