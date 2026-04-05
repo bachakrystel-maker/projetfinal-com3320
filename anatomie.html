@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>DOPAMINE | 01. ANATOMIE</title>
     <link rel="stylesheet" href="style.css">
-</head>
+    </head>
 <body>
     <nav>
         <div class="nav-container">
@@ -21,16 +21,50 @@
 
     <header class="hero">
         <h1>L'ANATOMIE</h1>
-        <p>Où tout commence dans le cerveau.</p>
+        <p>Explorez le circuit de la récompense.</p>
     </header>
 
     <main class="container">
-        <div class="card">
-            <h2>01. LE CIRCUIT</h2>
-            <p>Le système de récompense se situe dans les structures primitives du cerveau.</p>
-            <p><strong>RECHERCHE À INTÉGRER :</strong> Aire Tegmentale Ventrale (ATV) et Noyau Accumbens.</p>
-            <a href="chimie.html" class="btn-next">SUIVANT : LA CHIMIE →</a>
+        <div class="card bento-grid">
+            
+            <div class="bento-item item-full text-center">
+                <h2>OÙ ÇA SE PASSE ?</h2>
+                <p>Cliquez sur les zones colorées du schéma pour découvrir le rôle de chaque acteur de la dopamine.</p>
+            </div>
+
+            <div class="bento-item item-two-thirds scheme-container">
+                <svg id="brain-map" viewBox="0 0 500 350" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <filter id="shadow">
+                            <feDropShadow dx="0" dy="5" stdDeviation="10" flood-color="rgba(0,0,0,0.1)"/>
+                        </filter>
+                    </defs>
+                    <ellipse cx="250" cy="175" rx="200" ry="150" fill="#f1f5f9" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+                    
+                    <circle id="atv-zone" class="clickable-zone" cx="230" cy="220" r="15" fill="#3b82f6" opacity="0.8"/>
+                    
+                    <circle id="accumbens-zone" class="clickable-zone" cx="270" cy="190" r="15" fill="#10b981" opacity="0.8"/>
+                    
+                    <text x="210" y="225" font-family="Quicksand" font-size="12" fill="#fff" font-weight="bold">ATV</text>
+                    <text x="250" y="195" font-family="Quicksand" font-size="12" fill="#fff" font-weight="bold">Nac</text>
+                </svg>
+            </div>
+
+            <div id="info-panel" class="bento-item item-one-third info-panel hidden">
+                <div class="panel-content">
+                    <span id="close-panel" class="close-btn">&times;</span>
+                    <h3 id="panel-title">Titre de la zone</h3>
+                    <p id="panel-text">Texte explicatif à l'endroit. C'est ici que tes coéquipières mettront leurs recherches !</p>
+                </div>
+            </div>
+
+            <div class="bento-item item-full text-right mt-30">
+                <a href="chimie.html" class="btn-next">SUIVANT : LA CHIMIE →</a>
+            </div>
+
         </div>
     </main>
+
+    <script src="script.js"></script>
 </body>
 </html>
