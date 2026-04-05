@@ -2,61 +2,79 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | ANATOMIE</title>
-    <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap" rel="stylesheet">
+    <title>DOPAMINE | Anatomie</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
+        :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
+        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 15px; text-align: center; }
+        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 10px; }
+        .nav-menu a.active { background: var(--blue); color: white; }
+        .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
+        .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
+        .card-bento { background: white; border-radius: 40px; padding: 40px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
+        .scheme-container { background: #f8fafc; border-radius: 20px; padding: 20px; border: 1px solid #d1fae5; text-align: center; }
+        #brain-map { width: 100%; max-width: 450px; height: auto; }
+        .clickable-zone { cursor: pointer; transition: 0.3s; }
+        .clickable-zone:hover { transform: scale(1.1); transform-origin: center; filter: brightness(1.2); }
+        .info-panel { background: #f0fdfa; border-radius: 20px; padding: 25px; border: 2px solid var(--blue); min-height: 250px; }
+        h3 { color: var(--blue); margin-top: 0; font-size: 1.5rem; }
+        p { line-height: 1.6; color: #475569; }
+    </style>
 </head>
 <body>
     <nav>
-        <div class="nav-container">
-            <span class="nav-brand">DOPAMINE.LAB</span>
-            <div class="nav-menu">
-                <a href="index.html">ACCUEIL</a>
-                <a href="anatomie.html" class="active">01. ANATOMIE</a>
-                <a href="chimie.html">02. CHIMIE</a>
-                <a href="mecanisme.html">03. MÉCANISME</a>
-                <a href="addiction.html">04. ADDICTION</a>
-            </div>
+        <div class="nav-menu">
+            <a href="index.html">ACCUEIL</a>
+            <a href="anatomie.html" class="active">01. ANATOMIE</a>
+            <a href="chimie.html">02. CHIMIE</a>
+            <a href="mecanisme.html">03. MÉCANISME</a>
+            <a href="addiction.html">04. ADDICTION</a>
         </div>
     </nav>
     <header class="hero">
-        <h1>L'ANATOMIE</h1>
-        <p>Cliquez sur les zones pour explorer le cerveau.</p>
+        <h1>La Géographie du Désir</h1>
+        <p>Le circuit de la récompense se cache dans les profondeurs du cerveau.</p>
     </header>
     <main class="container">
-        <div class="card bento-grid">
+        <div class="card-bento">
             <div class="scheme-container">
                 <svg id="brain-map" viewBox="0 0 500 350">
                     <path d="M100,200 C100,100 200,50 300,50 C400,50 450,150 450,220 C450,280 380,300 300,300 C220,300 150,280 100,250 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="3"/>
-                    <g id="atv-zone" style="cursor:pointer">
-                        <circle cx="280" cy="220" r="20" fill="#3b82f6"/>
+                    <g id="atv-zone" class="clickable-zone">
+                        <circle cx="280" cy="220" r="22" fill="#3b82f6"/>
                         <text x="280" y="225" text-anchor="middle" fill="white" font-weight="bold" font-size="12">ATV</text>
                     </g>
-                    <g id="accumbens-zone" style="cursor:pointer">
-                        <circle cx="240" cy="180" r="20" fill="#10b981"/>
+                    <g id="accumbens-zone" class="clickable-zone">
+                        <circle cx="240" cy="180" r="22" fill="#10b981"/>
                         <text x="240" y="185" text-anchor="middle" fill="white" font-weight="bold" font-size="12">NAc</text>
                     </g>
                 </svg>
+                <p style="font-size: 0.9rem; margin-top: 10px;"><em>Cliquez sur les zones colorées pour les détails.</em></p>
             </div>
-            <div id="info-panel" class="info-panel hidden">
-                <h3 id="panel-title">Zone</h3>
-                <p id="panel-text">Chargement...</p>
+            <div id="info-panel" class="info-panel">
+                <h3 id="panel-title">Cliquez sur une zone</h3>
+                <p id="panel-text">Sélectionnez une structure anatomique sur le schéma pour comprendre son rôle spécifique dans la libération de dopamine.</p>
             </div>
         </div>
     </main>
     <script>
         const zoneData = {
-            'atv-zone': { title: "Aire Tegmentale Ventrale", text: "Point de départ de la dopamine." },
-            'accumbens-zone': { title: "Noyau Accumbens", text: "Centre majeur du plaisir." }
+            'atv-zone': { 
+                title: "Aire Tegmentale Ventrale (ATV)", 
+                text: "Située dans le mésencéphale, l'ATV est l'usine principale. C'est ici que naissent les neurones dopaminergiques. Lorsqu'elle détecte un signal de récompense (une odeur de nourriture ou une notification), elle envoie une décharge électrique vers le reste du circuit." 
+            },
+            'accumbens-zone': { 
+                title: "Noyau Accumbens", 
+                text: "C'est l'interface entre la motivation et l'action. Il reçoit la dopamine de l'ATV et traduit ce signal chimique en un élan physique. Il est responsable de la sensation de 'poussée' qui nous fait bouger pour obtenir ce que nous voulons." 
+            }
         };
-        document.getElementById('atv-zone').onclick = () => showInfo('atv-zone');
-        document.getElementById('accumbens-zone').onclick = () => showInfo('accumbens-zone');
-        
-        function showInfo(id) {
-            document.getElementById('panel-title').innerText = zoneData[id].title;
-            document.getElementById('panel-text').innerText = zoneData[id].text;
-            document.getElementById('info-panel').classList.remove('hidden');
-        }
+        document.querySelectorAll('.clickable-zone').forEach(zone => {
+            zone.addEventListener('click', () => {
+                document.getElementById('panel-title').innerText = zoneData[zone.id].title;
+                document.getElementById('panel-text').innerText = zoneData[zone.id].text;
+            });
+        });
     </script>
 </body>
 </html>
