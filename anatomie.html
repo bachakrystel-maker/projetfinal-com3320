@@ -2,86 +2,65 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | Section 1 : Anatomie</title>
+    <title>LE CIRCUIT | Communiquer la Science</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
         :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; --dark: #1e293b; }
-        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; color: var(--dark); }
-        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
-        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 12px; font-size: 0.9rem; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
+        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 20px 0; text-align: center; }
+        .nav-brand { display: block; font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; color: #64748b; margin-bottom: 15px; text-transform: uppercase; }
+        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 18px; border-radius: 12px; font-size: 0.85rem; }
         .nav-menu a.active { background: var(--blue); color: white; }
         .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
-        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
-        .bento-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: start; }
+        .container { max-width: 1000px; margin: 30px auto; padding: 0 20px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; }
         .card { background: white; border-radius: 35px; padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #d1fae5; }
-        .brain-container { background: #f8fafc; border-radius: 25px; padding: 20px; display: flex; justify-content: center; }
-        #brain-svg { width: 100%; max-width: 500px; height: auto; }
-        .zone { cursor: pointer; transition: 0.3s ease; opacity: 0.8; }
+        #brain-svg { width: 100%; height: auto; }
+        .zone { cursor: pointer; transition: 0.3s; opacity: 0.8; }
         .zone:hover { opacity: 1; transform: scale(1.02); }
         .label-bg { fill: #1e293b; rx: 5; }
-        .label-text { fill: white; font-size: 12px; font-weight: 800; pointer-events: none; }
+        .label-text { fill: white; font-size: 11px; font-weight: 800; pointer-events: none; }
         .info-content h2 { color: var(--blue); margin-top: 0; }
-        .btn-next { display: inline-block; background: var(--blue); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; margin-top: 20px; float: right; }
     </style>
 </head>
 <body>
     <nav>
+        <span class="nav-brand">Communiquer la science</span>
         <div class="nav-menu">
             <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html" class="active">SECTION 1</a>
-            <a href="chimie.html">SECTION 2</a>
-            <a href="mecanisme.html">SECTION 3</a>
-            <a href="addiction.html">SECTION 4</a>
+            <a href="anatomie.html" class="active">01. LE CIRCUIT</a>
+            <a href="chimie.html">02. LE MESSAGER</a>
+            <a href="mecanisme.html">03. LA MOTIVATION</a>
+            <a href="addiction.html">04. LES USAGES</a>
         </div>
     </nav>
-    <header class="hero">
-        <h1>🧠 01. L'Anatomie</h1>
-        <p>Cliquez sur les zones pour explorer le circuit de la récompense.</p>
-    </header>
+    <header class="hero"><h1>🧠 L'Anatomie du Désir</h1></header>
     <main class="container">
-        <div class="bento-grid">
-            <div class="card brain-container">
-                <svg id="brain-svg" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M120,250 C80,230 70,150 120,100 C170,50 350,50 420,120 C480,180 460,280 380,310 C320,330 200,310 120,250 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
-                    <path d="M300,310 Q310,350 350,340 Q390,330 380,290" fill="#94a3b8" />
-                    <g class="zone" onclick="showSection('atv')">
-                        <circle cx="280" cy="225" r="15" fill="#3b82f6" stroke="white" stroke-width="2"/>
-                        <rect x="265" y="245" width="30" height="18" class="label-bg"/>
-                        <text x="280" y="258" text-anchor="middle" class="label-text">ATV</text>
-                    </g>
-                    <g class="zone" onclick="showSection('nac')">
-                        <circle cx="230" cy="190" r="15" fill="#10b981" stroke="white" stroke-width="2"/>
-                        <rect x="215" y="160" width="30" height="18" class="label-bg"/>
-                        <text x="230" y="173" text-anchor="middle" class="label-text">NAc</text>
-                    </g>
-                    <g class="zone" onclick="showSection('cpf')">
-                        <path d="M120,150 Q130,100 180,110" fill="none" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
-                        <rect x="110" y="100" width="35" height="18" class="label-bg"/>
-                        <text x="127" y="113" text-anchor="middle" class="label-text">CPF</text>
-                    </g>
-                </svg>
-            </div>
-            <div class="card" id="info-box">
-                <div id="default-msg"><p>Sélectionnez une zone du cerveau pour voir son rôle.</p></div>
-                <div id="content-display" class="info-content" style="display:none;">
-                    <h2 id="info-title"></h2>
-                    <p id="info-text"></p>
-                </div>
+        <div class="card">
+            <svg id="brain-svg" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+                <path d="M120,250 C80,230 70,150 120,100 C170,50 350,50 420,120 C480,180 460,280 380,310 C320,330 200,310 120,250 Z" fill="#cbd5e1" />
+                <g class="zone" onclick="show('atv')"><circle cx="280" cy="225" r="15" fill="#3b82f6"/><text x="280" y="255" text-anchor="middle" font-size="10" font-weight="bold">ATV</text></g>
+                <g class="zone" onclick="show('nac')"><circle cx="230" cy="190" r="15" fill="#10b981"/><text x="230" y="170" text-anchor="middle" font-size="10" font-weight="bold">NAc</text></g>
+                <g class="zone" onclick="show('cpf')"><path d="M120,150 Q130,100 180,110" stroke="#f59e0b" stroke-width="12" opacity="0.6"/><text x="130" y="120" text-anchor="middle" font-size="10" font-weight="bold">CPF</text></g>
+            </svg>
+        </div>
+        <div class="card" id="info-box">
+            <div id="default-msg"><p>Cliquez sur une zone (ATV, NAc ou CPF) pour découvrir son rôle dans le circuit de la récompense.</p></div>
+            <div id="content-display" style="display:none;" class="info-content">
+                <h2 id="title"></h2><p id="text"></p>
             </div>
         </div>
-        <a href="chimie.html" class="btn-next">Suivant : La Chimie →</a>
     </main>
     <script>
         const data = {
-            atv: { title: "L'Aire Tegmentale Ventrale (ATV)", text: "La source : C'est ici que le messager chimique est fabriqué. L'ATV s'active dès qu'elle anticipe quelque chose d'agréable." },
-            nac: { title: "Le Noyau Accumbens (NAc)", text: "Le centre de la motivation : Il reçoit la dopamine et déclenche l'envie d'agir physiquement." },
-            cpf: { title: "Le Cortex Préfrontal (CPF)", text: "Le centre de contrôle : Il évalue si l'action en vaut la peine. C'est lui qui tente de freiner nos impulsions." }
+            atv: { title: "Aire Tegmentale Ventrale", text: "La source : C'est ici que le messager chimique est fabriqué. L'ATV s'active dès qu'elle anticipe quelque chose d'agréable." },
+            nac: { title: "Noyau Accumbens", text: "La motivation : Il reçoit la dopamine et déclenche l'envie d'agir physiquement." },
+            cpf: { title: "Cortex Préfrontal", text: "Le contrôle : Il évalue si l'action en vaut la peine. C'est lui qui tente de freiner nos impulsions." }
         };
-        function showSection(id) {
-            document.getElementById('default-msg').style.display = 'none';
-            document.getElementById('content-display').style.display = 'block';
-            document.getElementById('info-title').innerText = data[id].title;
-            document.getElementById('info-text').innerText = data[id].text;
+        function show(id) {
+            document.getElementById('default-msg').style.display='none';
+            document.getElementById('content-display').style.display='block';
+            document.getElementById('title').innerText = data[id].title;
+            document.getElementById('text').innerText = data[id].text;
         }
     </script>
 </body>
