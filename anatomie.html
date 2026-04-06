@@ -15,9 +15,22 @@
         .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; border: 2px solid transparent; }
         .nav-menu a.active { background: var(--green); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
 
-        /* Hero Section (Taille harmonisée à 4rem comme les autres) */
-        .hero { background: var(--green); color: var(--dark); padding: 80px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
-        .hero h1 { font-size: 4rem; margin: 0; text-transform: uppercase; -webkit-text-stroke: 1.5px var(--dark); line-height: 0.9; }
+        /* Hero Section : On réduit le padding et la taille du texte */
+.hero { 
+    background: var(--green); 
+    color: var(--dark); 
+    padding: 50px 20px; /* Réduit de 80px à 50px */
+    text-align: center; 
+    border-bottom: 5px solid var(--dark); 
+}
+
+.hero h1 { 
+    font-size: 2.8rem; /* Réduit de 4rem à 2.8rem */
+    margin: 0; 
+    text-transform: uppercase; 
+    -webkit-text-stroke: 1px var(--dark); 
+    line-height: 1.1; 
+}
 
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
         
@@ -27,9 +40,15 @@
         .zone-btn { cursor: pointer; transition: 0.2s; }
         .zone-btn:hover { filter: brightness(1.1); transform: scale(1.02); }
         
-        /* Titre H2 harmonisé à 2.2rem */
-        h2 { text-transform: uppercase; font-size: 2.2rem; margin-top: 0; margin-bottom: 25px; line-height: 1; border-bottom: 4px solid var(--green); display: inline-block; }
-        .source-label { background: var(--dark); color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
+        /* Titre H2 dans le panneau latéral (pour être cohérent) */
+h2 { 
+    text-transform: uppercase; 
+    font-size: 1.8rem; /* Réduit de 2.2rem à 1.8rem */
+    margin: 0 0 20px 0; 
+    line-height: 1.1; 
+    border-bottom: 4px solid var(--green); 
+    display: inline-block; 
+}
         
         /* Texte P harmonisé à 1.15rem */
         p { font-size: 1.15rem; margin-bottom: 20px; }
