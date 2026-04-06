@@ -7,7 +7,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
         :root { --bg: #fafafa; --blue: #3b82f6; --dark: #121212; --green: #00FF66; --yellow: #FFD600; --pink: #FF6BB3; }
         
-        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.5; color: var(--dark); }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; color: var(--dark); }
         
         /* Navigation Sticky */
         nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
@@ -15,21 +15,25 @@
         .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; border: 2px solid transparent; }
         .nav-menu a.active { background: var(--green); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
 
-        /* Hero Section (La bande titre) */
+        /* Hero Section (Taille harmonisée à 4rem comme les autres) */
         .hero { background: var(--green); color: var(--dark); padding: 80px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
         .hero h1 { font-size: 4rem; margin: 0; text-transform: uppercase; -webkit-text-stroke: 1.5px var(--dark); line-height: 0.9; }
 
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
         
         .card { background: white; border: 4px solid var(--dark); padding: 30px; box-shadow: 12px 12px 0 var(--dark); }
-        .info-panel { background: white; border: 4px solid var(--dark); padding: 40px; box-shadow: 12px 12px 0 var(--dark); min-height: 450px; position: relative; }
+        .info-panel { background: white; border: 4px solid var(--dark); padding: 40px; box-shadow: 12px 12px 0 var(--dark); min-height: 450px; }
         
         .zone-btn { cursor: pointer; transition: 0.2s; }
         .zone-btn:hover { filter: brightness(1.1); transform: scale(1.02); }
         
-        h2 { text-transform: uppercase; font-size: 2.2rem; margin-top: 0; margin-bottom: 20px; line-height: 1; }
-        .source-label { background: var(--dark); color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
+        /* Titre H2 harmonisé à 2.2rem */
+        h2 { text-transform: uppercase; font-size: 2.2rem; margin-top: 0; margin-bottom: 25px; line-height: 1; border-bottom: 4px solid var(--green); display: inline-block; }
+        .source-label { background: var(--dark); color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
         
+        /* Texte P harmonisé à 1.15rem */
+        p { font-size: 1.15rem; margin-bottom: 20px; }
+
         .reset-btn { margin-top: 20px; background: var(--dark); color: white; border: none; padding: 12px 20px; cursor: pointer; font-family: inherit; font-weight: 800; text-transform: uppercase; box-shadow: 4px 4px 0 var(--blue); transition: 0.2s; }
         .reset-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--blue); }
 
@@ -55,29 +59,25 @@
 
     <div class="container">
         <div class="card">
-            <h2 style="font-size:1.5rem">Carte Interactive</h2>
+            <h2 style="font-size:1.5rem; border:none;">Carte Interactive</h2>
             <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
                 <path d="M100,200 Q100,50 300,50 Q450,50 450,220 Q450,300 300,310 Q100,280 100,200" fill="#f1f5f9" stroke="#121212" stroke-width="4"/>
-                
                 <circle class="zone-btn" cx="310" cy="230" r="22" fill="var(--blue)" stroke="var(--dark)" stroke-width="3" onclick="update('atv')"/>
                 <circle class="zone-btn" cx="240" cy="180" r="22" fill="var(--yellow)" stroke="var(--dark)" stroke-width="3" onclick="update('nac')"/>
                 <rect class="zone-btn" x="120" y="140" width="45" height="90" rx="12" fill="var(--pink)" stroke="var(--dark)" stroke-width="3" onclick="update('cpf')"/>
-                
                 <text x="310" y="270" text-anchor="middle" font-weight="900" font-size="14">ATV</text>
                 <text x="240" y="220" text-anchor="middle" font-weight="900" font-size="14">NAc</text>
                 <text x="142" y="250" text-anchor="middle" font-weight="900" font-size="14">CPF</text>
             </svg>
-            <p><i>Cliquez sur les centres nerveux (ATV, NAc, CPF) pour isoler leurs fonctions.</i></p>
+            <p style="font-size: 0.9rem;"><i>Cliquez sur les centres nerveux pour isoler leurs fonctions.</i></p>
             <button onclick="update('default')" style="width:100%; background:white; border:3px solid var(--dark); padding:10px; font-family:inherit; font-weight:800; cursor:pointer; box-shadow:4px 4px 0 var(--dark);">RÉINITIALISER LA VUE ↺</button>
         </div>
 
         <div class="info-panel" id="display">
             <span class="source-label">Source : CHU de Québec</span>
             <h2>Le Réseau de la Récompense</h2>
-            <div style="font-size:1.1rem">
-                <p>Le système dopaminergique ne travaille pas en vase clos. Il s'agit d'un réseau complexe de structures interconnectées qui collaborent pour évaluer les stimuli environnementaux.</p>
-                <p>Selon le <b>CHU de Québec</b>, la vulnérabilité à l'addiction numérique naît d'un déséquilibre entre trois systèmes : la <b>récompense</b> (qui pousse à agir), le <b>contrôle exécutif</b> (qui modère) et le <b>stress</b> (qui amplifie le besoin). Explorez les zones pour comprendre ce piratage biologique.</p>
-            </div>
+            <p>Le système dopaminergique ne travaille pas en vase clos. Il s'agit d'un réseau complexe de structures interconnectées qui collaborent pour évaluer les stimuli environnementaux.</p>
+            <p>Selon le <b>CHU de Québec</b>, la vulnérabilité à l'addiction numérique naît d'un déséquilibre entre trois systèmes : la <b>récompense</b>, le <b>contrôle exécutif</b> et le <b>stress</b>. Explorez les zones pour comprendre ce piratage biologique.</p>
         </div>
     </div>
 
@@ -86,28 +86,28 @@
             atv: {
                 title: "L'Aire Tegmentale Ventrale (ATV)",
                 src: "Source : Institut du Cerveau",
-                text: "<p>Située dans le tronc cérébral, l'ATV est le point de départ. Elle fabrique la dopamine et l'envoie vers le reste du cerveau dès qu'une récompense est anticipée. C'est le 'moteur' du circuit.</p>"
+                text: "<p>Située dans le tronc cérébral, l'ATV est le point de départ du circuit. Elle fabrique la dopamine et l'envoie vers le reste du cerveau dès qu'une récompense est anticipée. C'est le moteur chimique de la voie mésolimbique.</p>"
             },
             nac: {
                 title: "Le Noyau Accumbens (NAc)",
                 src: "Source : Inserm",
-                text: "<p>C'est l'interface entre la motivation et l'action. Le NAc traduit le signal chimique en désir physique. C'est la zone qui réagit le plus aux récompenses immédiates des réseaux sociaux.</p>"
+                text: "<p>C'est l'interface entre la motivation et l'action. Le NAc traduit le signal chimique en désir physique de bouger. C'est la zone qui réagit le plus intensément aux récompenses variables des algorithmes de réseaux sociaux.</p>"
             },
             cpf: {
                 title: "Le Cortex Préfrontal (CPF)",
                 src: "Source : CHU de Québec / UdeM",
-                text: "<p>Le centre de contrôle et de décision. Il est censé modérer les impulsions du NAc. Comme il mature tardivement chez les jeunes adultes, le 'frein' est souvent trop faible face à la stimulation numérique.</p>"
+                text: "<p>Le centre de contrôle et de décision. Il est censé modérer les impulsions venant du NAc. Comme il finit sa maturation tardivement chez les jeunes adultes, le frein biologique est souvent insuffisant face à la stimulation numérique constante.</p>"
             },
             default: {
                 title: "Le Réseau de la Récompense",
                 src: "Source : CHU de Québec",
-                text: "<p>Le système dopaminergique est un réseau complexe de structures interconnectées. Selon le <b>CHU de Québec</b>, l'équilibre entre récompense, contrôle et stress est la clé.</p><p>Explorez les zones (ATV, NAc, CPF) pour voir comment elles collaborent ou entrent en conflit.</p>"
+                text: "<p>Le système dopaminergique est un réseau complexe de structures interconnectées. Selon le <b>CHU de Québec</b>, l'équilibre entre récompense, contrôle et stress est la clé de notre comportement.</p><p>Explorez les zones (ATV, NAc, CPF) pour voir comment elles collaborent ou entrent en conflit dans votre quotidien.</p>"
             }
         };
 
         function update(z) {
             const d = content[z];
-            let html = `<span class="source-label">${d.src}</span><h2>${d.title}</h2><div style="font-size:1.1rem">${d.text}</div>`;
+            let html = `<span class="source-label">${d.src}</span><h2>${d.title}</h2>${d.text}`;
             if (z !== 'default') {
                 html += `<button class="reset-btn" onclick="update('default')">← Retour à l'intro</button>`;
             }
@@ -119,7 +119,7 @@
         <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px;">
             <div>
                 <h3 style="text-transform: uppercase; color: var(--yellow); font-size: 1.5rem; margin-top: 0; letter-spacing: 1px;">Communiquer la science</h3>
-                <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; max-width: 500px;">Un dossier d'exploration neurobiologique sur la dopamine. Nous décodons les mécanismes du désir et l'impact des interfaces numériques.</p>
+                <p style="color: #94a3b8; font-size: 1rem; line-height: 1.6; max-width: 500px;">Un dossier d'exploration neurobiologique sur la dopamine. Nous décodons les mécanismes du désir et l'impact des interfaces numériques.</p>
                 <div style="margin-top: 30px; font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #334155; padding-top: 20px;">© 2026 — Montréal, QC</div>
             </div>
             <div>
