@@ -39,6 +39,9 @@
                 <rect class="zone-btn" x="120" y="140" width="45" height="90" rx="12" fill="var(--pink)" onclick="update('cpf')"/>
             </svg>
             <p><i>Cliquez sur les zones pour explorer les données des sources (UdeM, Inserm, CHU).</i></p>
+            <button onclick="update('default')" style="margin-top:10px; width:100%; background:white; border:3px solid var(--dark); padding:10px; font-family:inherit; font-weight:800; cursor:pointer; box-shadow:4px 4px 0 var(--dark);">
+    RÉINITIALISER LA VUE ↺
+</button>
         </div>
         <div class="card" id="display">
             <h2 style="text-transform: uppercase;">Sélectionnez une zone du circuit</h2>
@@ -50,8 +53,18 @@
             atv: { title: "L'Aire Tegmentale Ventrale (ATV)", text: "<p>Source : Institut du Cerveau. L'ATV est l'usine. Située dans le tronc cérébral, elle fabrique la dopamine à partir de la tyrosine. C'est elle qui envoie le signal de départ vers le reste du circuit dès qu'une récompense est anticipée.</p>" },
             nac: { title: "Le Noyau Accumbens (NAc)", text: "<p>Source : Inserm. Le NAc transforme le signal chimique en impulsion physique. C'est la zone qui réagit le plus violemment aux 'récompenses variables' des applications mobiles.</p>" },
             cpf: { title: "Le Cortex Préfrontal (CPF)", text: "<p>Source : CHU de Québec & UdeM. Le CPF est le centre de décision. Chez les jeunes adultes, sa maturation incomplète explique pourquoi il est si dur de freiner l'impulsion de scroller.</p>" }
-        };
-        function update(z) { document.getElementById('display').innerHTML = `<h2>${content[z].title}</h2><div style="font-size:1.1rem">${content[z].text}</div>`; }
+        default: {
+        title: "Le Réseau de la Récompense",
+        text: "<p>Le système dopaminergique ne travaille pas en vase clos. Il s'agit d'un réseau complexe de structures interconnectées qui collaborent pour évaluer les stimuli environnementaux.</p><p>Selon le <b>CHU de Québec</b>, la vulnérabilité à l'addiction numérique naît d'un déséquilibre entre trois systèmes : la <b>récompense</b>, le <b>contrôle exécutif</b> et le <b>stress</b>. Explorez les zones pour comprendre ce piratage biologique.</p>"
+    }
+};
+function update(z) { 
+    const d = content[z];
+    document.getElementById('display').innerHTML = `
+        <h2 style="text-transform: uppercase;">${d.title}</h2>
+        <div style="font-size:1.1rem">${d.text}</div>
+        ${z !== 'default' ? '<button onclick="update(\'default\')" style="margin-top:20px; background:var(--dark); color:white; border:none; padding:10px 20px; cursor:pointer; font-family:inherit; font-weight:800; text-transform:uppercase; box-shadow:4px 4px 0 var(--blue);">← Retour à l\'intro</button>' : ''}
+    `;}
     </script>
     <footer>
         <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;">
