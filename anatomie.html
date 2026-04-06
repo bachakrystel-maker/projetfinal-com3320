@@ -2,79 +2,87 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | Anatomie</title>
+    <title>DOPAMINE | Section 1 : Anatomie</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
-        :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; }
-        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
-        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 15px; text-align: center; }
-        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 10px; }
+        :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; --dark: #1e293b; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; color: var(--dark); }
+        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 15px; text-align: center; position: sticky; top: 0; z-index: 100; }
+        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 12px; font-size: 0.9rem; }
         .nav-menu a.active { background: var(--blue); color: white; }
         .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
-        .container { max-width: 1000px; margin: 20px auto; padding: 20px; }
-        .card-bento { background: white; border-radius: 40px; padding: 40px; display: grid; grid-template-columns: 1.5fr 1fr; gap: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .scheme-container { background: #f8fafc; border-radius: 20px; padding: 20px; border: 1px solid #d1fae5; text-align: center; }
-        #brain-map { width: 100%; max-width: 450px; height: auto; }
-        .clickable-zone { cursor: pointer; transition: 0.3s; }
-        .clickable-zone:hover { transform: scale(1.1); transform-origin: center; filter: brightness(1.2); }
-        .info-panel { background: #f0fdfa; border-radius: 20px; padding: 25px; border: 2px solid var(--blue); min-height: 250px; }
-        h3 { color: var(--blue); margin-top: 0; font-size: 1.5rem; }
-        p { line-height: 1.6; color: #475569; }
+        .container { max-width: 1100px; margin: 30px auto; padding: 0 20px; }
+        .bento-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 30px; align-items: start; }
+        .card { background: white; border-radius: 35px; padding: 30px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #d1fae5; }
+        .brain-container { background: #f8fafc; border-radius: 25px; padding: 20px; display: flex; justify-content: center; }
+        #brain-svg { width: 100%; max-width: 500px; height: auto; }
+        .zone { cursor: pointer; transition: 0.3s ease; opacity: 0.8; }
+        .zone:hover { opacity: 1; transform: scale(1.02); }
+        .label-bg { fill: #1e293b; rx: 5; }
+        .label-text { fill: white; font-size: 12px; font-weight: 800; pointer-events: none; }
+        .info-content h2 { color: var(--blue); margin-top: 0; }
+        .btn-next { display: inline-block; background: var(--blue); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; margin-top: 20px; float: right; }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-menu">
             <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html" class="active">01. ANATOMIE</a>
-            <a href="chimie.html">02. CHIMIE</a>
-            <a href="mecanisme.html">03. MÉCANISME</a>
-            <a href="addiction.html">04. ADDICTION</a>
+            <a href="anatomie.html" class="active">SECTION 1</a>
+            <a href="chimie.html">SECTION 2</a>
+            <a href="mecanisme.html">SECTION 3</a>
+            <a href="addiction.html">SECTION 4</a>
         </div>
     </nav>
     <header class="hero">
-        <h1>La Géographie du Désir</h1>
-        <p>Le circuit de la récompense se cache dans les profondeurs du cerveau.</p>
+        <h1>🧠 01. L'Anatomie</h1>
+        <p>Cliquez sur les zones pour explorer le circuit de la récompense.</p>
     </header>
     <main class="container">
-        <div class="card-bento">
-            <div class="scheme-container">
-                <svg id="brain-map" viewBox="0 0 500 350">
-                    <path d="M100,200 C100,100 200,50 300,50 C400,50 450,150 450,220 C450,280 380,300 300,300 C220,300 150,280 100,250 Z" fill="#e2e8f0" stroke="#cbd5e1" stroke-width="3"/>
-                    <g id="atv-zone" class="clickable-zone">
-                        <circle cx="280" cy="220" r="22" fill="#3b82f6"/>
-                        <text x="280" y="225" text-anchor="middle" fill="white" font-weight="bold" font-size="12">ATV</text>
+        <div class="bento-grid">
+            <div class="card brain-container">
+                <svg id="brain-svg" viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M120,250 C80,230 70,150 120,100 C170,50 350,50 420,120 C480,180 460,280 380,310 C320,330 200,310 120,250 Z" fill="#cbd5e1" stroke="#94a3b8" stroke-width="2"/>
+                    <path d="M300,310 Q310,350 350,340 Q390,330 380,290" fill="#94a3b8" />
+                    <g class="zone" onclick="showSection('atv')">
+                        <circle cx="280" cy="225" r="15" fill="#3b82f6" stroke="white" stroke-width="2"/>
+                        <rect x="265" y="245" width="30" height="18" class="label-bg"/>
+                        <text x="280" y="258" text-anchor="middle" class="label-text">ATV</text>
                     </g>
-                    <g id="accumbens-zone" class="clickable-zone">
-                        <circle cx="240" cy="180" r="22" fill="#10b981"/>
-                        <text x="240" y="185" text-anchor="middle" fill="white" font-weight="bold" font-size="12">NAc</text>
+                    <g class="zone" onclick="showSection('nac')">
+                        <circle cx="230" cy="190" r="15" fill="#10b981" stroke="white" stroke-width="2"/>
+                        <rect x="215" y="160" width="30" height="18" class="label-bg"/>
+                        <text x="230" y="173" text-anchor="middle" class="label-text">NAc</text>
+                    </g>
+                    <g class="zone" onclick="showSection('cpf')">
+                        <path d="M120,150 Q130,100 180,110" fill="none" stroke="#f59e0b" stroke-width="12" stroke-linecap="round" opacity="0.6"/>
+                        <rect x="110" y="100" width="35" height="18" class="label-bg"/>
+                        <text x="127" y="113" text-anchor="middle" class="label-text">CPF</text>
                     </g>
                 </svg>
-                <p style="font-size: 0.9rem; margin-top: 10px;"><em>Cliquez sur les zones colorées pour les détails.</em></p>
             </div>
-            <div id="info-panel" class="info-panel">
-                <h3 id="panel-title">Cliquez sur une zone</h3>
-                <p id="panel-text">Sélectionnez une structure anatomique sur le schéma pour comprendre son rôle spécifique dans la libération de dopamine.</p>
+            <div class="card" id="info-box">
+                <div id="default-msg"><p>Sélectionnez une zone du cerveau pour voir son rôle.</p></div>
+                <div id="content-display" class="info-content" style="display:none;">
+                    <h2 id="info-title"></h2>
+                    <p id="info-text"></p>
+                </div>
             </div>
         </div>
+        <a href="chimie.html" class="btn-next">Suivant : La Chimie →</a>
     </main>
     <script>
-        const zoneData = {
-            'atv-zone': { 
-                title: "Aire Tegmentale Ventrale (ATV)", 
-                text: "Située dans le mésencéphale, l'ATV est l'usine principale. C'est ici que naissent les neurones dopaminergiques. Lorsqu'elle détecte un signal de récompense (une odeur de nourriture ou une notification), elle envoie une décharge électrique vers le reste du circuit." 
-            },
-            'accumbens-zone': { 
-                title: "Noyau Accumbens", 
-                text: "C'est l'interface entre la motivation et l'action. Il reçoit la dopamine de l'ATV et traduit ce signal chimique en un élan physique. Il est responsable de la sensation de 'poussée' qui nous fait bouger pour obtenir ce que nous voulons." 
-            }
+        const data = {
+            atv: { title: "L'Aire Tegmentale Ventrale (ATV)", text: "La source : C'est ici que le messager chimique est fabriqué. L'ATV s'active dès qu'elle anticipe quelque chose d'agréable." },
+            nac: { title: "Le Noyau Accumbens (NAc)", text: "Le centre de la motivation : Il reçoit la dopamine et déclenche l'envie d'agir physiquement." },
+            cpf: { title: "Le Cortex Préfrontal (CPF)", text: "Le centre de contrôle : Il évalue si l'action en vaut la peine. C'est lui qui tente de freiner nos impulsions." }
         };
-        document.querySelectorAll('.clickable-zone').forEach(zone => {
-            zone.addEventListener('click', () => {
-                document.getElementById('panel-title').innerText = zoneData[zone.id].title;
-                document.getElementById('panel-text').innerText = zoneData[zone.id].text;
-            });
-        });
+        function showSection(id) {
+            document.getElementById('default-msg').style.display = 'none';
+            document.getElementById('content-display').style.display = 'block';
+            document.getElementById('info-title').innerText = data[id].title;
+            document.getElementById('info-text').innerText = data[id].text;
+        }
     </script>
 </body>
 </html>
