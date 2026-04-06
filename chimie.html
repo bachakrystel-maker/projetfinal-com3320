@@ -2,40 +2,45 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>LE MESSAGER | Communiquer la Science</title>
+    <title>02. LE MESSAGER | Communiquer la Science</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
-        :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; }
-        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
-        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 20px 0; text-align: center; }
-        .nav-brand { display: block; font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; color: #64748b; margin-bottom: 15px; text-transform: uppercase; }
-        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 18px; border-radius: 12px; font-size: 0.85rem; }
-        .nav-menu a.active { background: var(--blue); color: white; }
-        .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
-        .container { max-width: 850px; margin: -30px auto 60px auto; padding: 0 20px; }
-        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #d1fae5; }
-        .box { background: #f8fafc; border: 2px dashed var(--blue); border-radius: 20px; padding: 25px; margin: 20px 0; text-align: center; font-weight: bold; }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
+        :root { --bg: #fafafa; --dark: #121212; --purple: #BC77FF; --yellow: #FFD600; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; }
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; }
+        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 15px; }
+        .container { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        .section-box { background: white; border: 4px solid var(--dark); padding: 50px; box-shadow: 15px 15px 0 var(--dark); margin-bottom: 50px; }
+        .highlight { background: var(--purple); color: white; border: 3px solid var(--dark); padding: 30px; box-shadow: 8px 8px 0 var(--dark); margin-top: 30px; }
+        h2 { text-transform: uppercase; font-size: 2.5rem; border-bottom: 4px solid var(--dark); display: inline-block; margin-bottom: 30px; }
+        h3 { color: var(--purple); text-transform: uppercase; font-weight: 800; margin-top: 40px; }
     </style>
 </head>
 <body>
-    <nav>
-        <span class="nav-brand">Communiquer la science</span>
-        <div class="nav-menu">
-            <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html">01. LE CIRCUIT</a>
-            <a href="chimie.html" class="active">02. LE MESSAGER</a>
-            <a href="mecanisme.html">03. LA MOTIVATION</a>
-            <a href="addiction.html">04. LES USAGES</a>
+    <nav><span class="nav-brand">Communiquer la science</span></nav>
+    <div class="container">
+        <div class="section-box">
+            <h2>La Mécanique Synaptique</h2>
+            <p>La dopamine n'est pas un fluide qui baigne le cerveau, mais un <b>neurotransmetteur</b> précis. Pour que l'information circule, elle doit franchir la fente synaptique (un espace de 20 nanomètres) entre deux neurones. Selon l'<b>Institut du Cerveau</b>, ce processus se décompose en étapes biochimiques strictes.</p>
+            
+            <h3>1. Synthèse et Stockage</h3>
+            <p>La dopamine est produite à partir de la tyrosine, un acide aminé. Elle est ensuite empaquetée dans des <b>vésicules synaptiques</b>. Ces petits sacs protègent les molécules avant leur libération.</p>
+
+            <h3>2. Libération et Fixation</h3>
+            <p>Lorsqu'un influx électrique (potentiel d'action) arrive, les vésicules fusionnent avec la paroi du neurone et libèrent la dopamine. Elle traverse la synapse et se fixe sur des <b>récepteurs dopaminergiques</b> spécialisés :</p>
+            <ul>
+                <li><b>Récepteurs D1 :</b> Ils ont tendance à être excitateurs, facilitant la transmission du message.</li>
+                <li><b>Récepteurs D2 :</b> Ils agissent souvent comme des régulateurs ou des freins, modulant l'intensité du signal.</li>
+            </ul>
+
+            <h3>3. La Fin du Signal (Recapture)</h3>
+            <p>Une fois le message transmis, la dopamine ne doit pas rester dans la synapse. Elle est soit dégradée par des enzymes (COMT/MAO), soit réaspirée par des <b>transporteurs de dopamine (DAT)</b> pour être recyclée. C'est ce cycle de libération-récupération qui maintient l'équilibre mental.</p>
+
+            <div class="highlight">
+                <b>LE PIRATAGE CHIMIQUE :</b> L'usage compulsif des réseaux sociaux provoque des décharges si fréquentes que le système de recapture est débordé. Le cerveau, pour se protéger de cette sur-stimulation, réduit le nombre de récepteurs disponibles (down-regulation). Résultat : on a besoin de stimuli encore plus forts pour ressentir la même motivation qu'avant. (Source : Inserm / CHU Québec).
+            </div>
         </div>
-    </nav>
-    <header class="hero"><h1>🧪 Le Messager Chimique</h1></header>
-    <main class="container">
-        <div class="card">
-            <h2>La transmission synaptique</h2>
-            <p>La dopamine est un neurotransmetteur : un messager chimique qui permet aux neurones de communiquer entre eux.</p>
-            <div class="box">Émetteur ⚡ → [ Molécule de Dopamine ] → Récepteur 🗝️</div>
-            <p><strong>L'équilibre :</strong> L'Institut du Cerveau souligne que ce système influence nos émotions. Lorsqu'il est trop stimulé, les récepteurs peuvent se saturer, modifiant notre perception du plaisir quotidien.</p>
-        </div>
-    </main>
+    </div>
 </body>
 </html>
