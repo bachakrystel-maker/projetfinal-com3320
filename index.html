@@ -2,14 +2,14 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>COMMUNIQUER LA SCIENCE | Dossier Dopamine</title>
+    <title>COMMUNIQUER LA SCIENCE | Accueil</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
         :root { --bg: #fafafa; --yellow: #FFD600; --blue: #3b82f6; --pink: #FF6BB3; --dark: #121212; }
         body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; color: var(--dark); line-height: 1.4; }
-        nav { background: white; border-bottom: 4px solid var(--dark); padding: 20px; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; }
-        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 15px; padding: 10px; border: 2px solid transparent; }
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
+        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; border: 2px solid transparent; }
         .nav-menu a.active { background: var(--yellow); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
         .hero { padding: 120px 20px; text-align: center; background: var(--blue); color: white; border-bottom: 5px solid var(--dark); }
         .hero h1 { font-size: 4.5rem; margin: 0; line-height: 0.85; text-transform: uppercase; -webkit-text-stroke: 1.5px var(--dark); }
@@ -17,9 +17,8 @@
         .main-card { background: white; border: 4px solid var(--dark); padding: 60px; box-shadow: 15px 15px 0 var(--dark); }
         .tag { display: inline-block; background: var(--pink); color: white; padding: 8px 20px; font-weight: 800; border: 3px solid var(--dark); margin-bottom: 25px; box-shadow: 4px 4px 0 var(--dark); text-transform: uppercase; }
         h2 { font-size: 2.8rem; line-height: 1; margin-bottom: 40px; text-transform: uppercase; }
-        .content-text { font-size: 1.25rem; line-height: 1.6; text-align: left; }
         .btn { display: inline-block; background: var(--yellow); color: var(--dark); padding: 25px 60px; font-weight: 900; text-decoration: none; border: 4px solid var(--dark); box-shadow: 8px 8px 0 var(--dark); text-transform: uppercase; margin-top: 40px; transition: 0.2s; }
-        .btn:hover { transform: translate(-4px, -4px); box-shadow: 12px 12px 0 var(--dark); }
+        footer { background: var(--dark); color: white; padding: 60px 20px; border-top: 5px solid var(--yellow); margin-top: 80px; }
     </style>
 </head>
 <body>
@@ -33,19 +32,21 @@
             <a href="addiction.html">04. LES USAGES</a>
         </div>
     </nav>
-    <header class="hero">
-        <h1>L'ATTENTE EST-ELLE PLUS FORTE QUE LE PLAISIR ?</h1>
-    </header>
+    <header class="hero"><h1>L'ATTENTE EST-ELLE PLUS FORTE QUE LE PLAISIR ?</h1></header>
     <main class="container">
         <div class="main-card">
-            <span class="tag">Dossier Neuro-comportemental</span>
-            <h2>La dopamine : Le moteur de la poursuite infinie.</h2>
-            <div class="content-text">
-                <p>Trop souvent réduite à la "molécule du plaisir", la dopamine est en réalité le pivot central de notre survie et de nos comportements les plus complexes. Selon les dernières revues de littérature (Nature, 2025), elle agit comme un baromètre de la valeur : elle ne récompense pas l'action finie, elle finance l'effort pour y arriver.</p>
-                <p>Dans un monde saturé par le numérique, ce système millénaire est mis à rude épreuve. Entre gratification instantanée et érosion de l'attention, comprendre la dopamine n'est plus seulement une curiosité scientifique, c'est une nécessité pour reprendre le contrôle sur nos usages quotidiens. Ce dossier décortique les mécanismes biochimiques, les circuits anatomiques et les impacts sociétaux de ce messager chimique crucial.</p>
-            </div>
-            <a href="anatomie.html" class="btn">Explorer le dossier complet →</a>
+            <span class="tag">Dossier Spécial : Dopamine</span>
+            <h2>La molécule qui pirate votre attention.</h2>
+            <p style="font-size: 1.2rem;">Bienvenue sur <b>Communiquer la science</b>. Ce dossier interactif explore les mécanismes profonds de la dopamine, de sa chimie synaptique à son impact sur nos comportements numériques de jeunes adultes. Basé sur les recherches de l'UdeM, Nature et l'Inserm, nous décodons ici pourquoi le plaisir s'efface souvent devant l'envie.</p>
+            <a href="anatomie.html" class="btn">Explorer le dossier →</a>
         </div>
     </main>
+    <footer>
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;">
+            <div><h3 style="color: var(--yellow);">Communiquer la science</h3><p style="color: #94a3b8; font-size: 0.9rem;">Dossier interactif de vulgarisation scientifique sur la neurobiologie du désir.</p></div>
+            <div><h4 style="text-transform: uppercase; font-size: 0.8rem;">Sources</h4><ul style="list-style: none; padding: 0; font-size: 0.8rem; color: #94a3b8;"><li>• Nature Neuroscience</li><li>• Université de Montréal</li><li>• Inserm</li></ul></div>
+            <div><h4 style="text-transform: uppercase; font-size: 0.8rem;">Sections</h4><div style="display: flex; flex-direction: column; font-size: 0.8rem;"><a href="anatomie.html" style="color: var(--yellow);">01. Anatomie</a><a href="chimie.html" style="color: var(--yellow);">02. Chimie</a><a href="mecanisme.html" style="color: var(--yellow);">03. Motivation</a></div></div>
+        </div>
+    </footer>
 </body>
 </html>
