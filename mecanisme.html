@@ -2,40 +2,44 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | Mécanisme</title>
+    <title>DOPAMINE | Section 3</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
         :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; }
         body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
         nav { background: white; border-bottom: 2px solid #d1fae5; padding: 15px; text-align: center; }
-        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 10px; }
+        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 12px; }
         .nav-menu a.active { background: var(--blue); color: white; }
         .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
         .container { max-width: 850px; margin: -30px auto 60px auto; padding: 0 20px; }
-        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        .highlight { background: #dcfce7; padding: 5px 10px; border-radius: 5px; font-weight: bold; color: #166534; }
+        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
+        .formula { background: #eff6ff; padding: 25px; border-radius: 15px; font-weight: bold; color: var(--blue); border-left: 6px solid var(--blue); font-size: 1.2rem; }
+        .btn-next { display: inline-block; background: var(--blue); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; float: right; margin-top: 20px; }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-menu">
             <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html">01. ANATOMIE</a>
-            <a href="chimie.html">02. CHIMIE</a>
-            <a href="mecanisme.html" class="active">03. MÉCANISME</a>
-            <a href="addiction.html">04. ADDICTION</a>
+            <a href="anatomie.html">SECTION 1</a>
+            <a href="chimie.html">SECTION 2</a>
+            <a href="mecanisme.html" class="active">SECTION 3</a>
+            <a href="addiction.html">SECTION 4</a>
         </div>
     </nav>
     <header class="hero">
-        <h1>L'Erreur de Prédiction</h1>
-        <p>Pourquoi l'attente est plus forte que la possession.</p>
+        <h1>⚡ 03. Motivation vs Plaisir</h1>
+        <p>Pourquoi la dopamine n'est pas ce que vous croyez.</p>
     </header>
     <main class="container">
         <div class="card">
-            <h2>L'expérience de Schultz</h2>
-            <p>Le neuroscientifique <span class="highlight">Wolfram Schultz</span> a révolutionné notre compréhension de la dopamine. Il a découvert que les neurones dopaminergiques ne s'activent pas quand on reçoit une récompense attendue, mais au moment du <strong>signal</strong> qui l'annonce.</p>
-            <p>Si vous attendez un café, le pic de dopamine arrive quand vous entendez la machine démarrer, pas quand vous buvez la première gorgée. C'est l'essence de la motivation : la dopamine est une molécule de <strong>prédiction</strong>.</p>
-            <p><strong>L'effet de surprise :</strong> Si la récompense est meilleure que prévue (une promotion inattendue), le pic de dopamine est immense. Si elle est moins bonne, la dopamine chute sous son niveau de base, créant une sensation de malaise ou de déception. C'est ce mécanisme qui nous force à apprendre et à ajuster nos comportements.</p>
+            <h2>Évaluer la valeur de l'action</h2>
+            <p>Selon <strong>Nature Neuroscience</strong>, la dopamine n'est pas le plaisir pur. C'est un signal qui évalue si un effort vaut la peine d'être fourni.</p>
+            <div class="formula">
+                Dopamine = Est-ce que l'effort en vaut la peine ? 🤔
+            </div>
+            <p>C'est le moteur de la <strong>motivation</strong>. On peut se sentir poussé vers son téléphone (forte dopamine) sans pour autant ressentir de plaisir une fois l'application ouverte.</p>
+            <a href="addiction.html" class="btn-next">Suivant : Les Réseaux Sociaux →</a>
         </div>
     </main>
 </body>
