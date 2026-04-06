@@ -7,15 +7,18 @@
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
         :root { --bg: #fafafa; --blue: #3b82f6; --dark: #121212; --green: #00FF66; --yellow: #FFD600; --pink: #FF6BB3; }
         body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.5; }
-        nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
-        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
-        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; }
-        .nav-menu a.active { background: var(--green); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
-        .hero { background: var(--green); color: var(--dark); padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; }
+        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 15px; padding: 10px; }
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
-        .card { background: white; border: 4px solid var(--dark); padding: 30px; box-shadow: 12px 12px 0 var(--dark); }
+        .brain-card { background: white; border: 4px solid var(--dark); padding: 30px; box-shadow: 12px 12px 0 var(--dark); position: sticky; top: 120px; }
+        .info-panel { background: white; border: 4px solid var(--dark); padding: 40px; box-shadow: 12px 12px 0 var(--dark); }
         .zone-btn { cursor: pointer; transition: 0.2s; }
-        footer { background: var(--dark); color: white; padding: 60px 20px; border-top: 5px solid var(--green); margin-top: 80px; }
+        .zone-btn:hover { filter: brightness(1.2); transform: scale(1.05); }
+        h2 { text-transform: uppercase; font-size: 2.2rem; margin-bottom: 20px; line-height: 1; }
+        .source-label { background: var(--dark); color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
+        .rich-text p { margin-bottom: 20px; font-size: 1.1rem; }
+        .rich-text b { color: var(--blue); }
     </style>
 </head>
 <body>
@@ -23,55 +26,61 @@
         <span class="nav-brand">Communiquer la science</span>
         <div class="nav-menu">
             <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html" class="active">01. LE CIRCUIT</a>
+            <a href="anatomie.html" style="background:var(--green); border:2px solid var(--dark)">01. LE CIRCUIT</a>
             <a href="chimie.html">02. LE MESSAGER</a>
             <a href="mecanisme.html">03. LA MOTIVATION</a>
             <a href="addiction.html">04. LES USAGES</a>
         </div>
     </nav>
-    <header class="hero"><h1>🧠 L'ARCHITECTURE DU DÉSIR</h1></header>
     <div class="container">
-        <div class="card">
+        <div class="brain-card">
+            <h2 style="font-size:1.5rem">Architecture du Désir</h2>
             <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
                 <path d="M100,200 Q100,50 300,50 Q450,50 450,220 Q450,300 300,310 Q100,280 100,200" fill="#f1f5f9" stroke="#121212" stroke-width="4"/>
-                <circle class="zone-btn" cx="310" cy="230" r="22" fill="var(--blue)" onclick="update('atv')"/>
-                <circle class="zone-btn" cx="240" cy="180" r="22" fill="var(--yellow)" onclick="update('nac')"/>
-                <rect class="zone-btn" x="120" y="140" width="45" height="90" rx="12" fill="var(--pink)" onclick="update('cpf')"/>
+                <circle class="zone-btn" cx="310" cy="230" r="22" fill="var(--blue)" stroke="var(--dark)" stroke-width="3" onclick="update('atv')"/>
+                <circle class="zone-btn" cx="240" cy="180" r="22" fill="var(--yellow)" stroke="var(--dark)" stroke-width="3" onclick="update('nac')"/>
+                <rect class="zone-btn" x="120" y="140" width="45" height="90" rx="12" fill="var(--pink)" stroke="var(--dark)" stroke-width="3" onclick="update('cpf')"/>
+                <text x="310" y="270" text-anchor="middle" font-weight="900" font-size="14">ATV</text>
+                <text x="240" y="220" text-anchor="middle" font-weight="900" font-size="14">NAc</text>
+                <text x="142" y="250" text-anchor="middle" font-weight="900" font-size="14">CPF</text>
             </svg>
-            <p><i>Cliquez sur les zones pour explorer les données des sources (UdeM, Inserm, CHU).</i></p>
-            <button onclick="update('default')" style="margin-top:10px; width:100%; background:white; border:3px solid var(--dark); padding:10px; font-family:inherit; font-weight:800; cursor:pointer; box-shadow:4px 4px 0 var(--dark);">
-    RÉINITIALISER LA VUE ↺
-</button>
+            <p><i>Cliquez sur les centres nerveux pour isoler leurs fonctions spécialisées.</i></p>
         </div>
-        <div class="card" id="display">
-            <h2 style="text-transform: uppercase;">Sélectionnez une zone du circuit</h2>
-            <p>Chaque structure du cerveau collabore pour évaluer les stimuli environnementaux. Selon le <b>CHU de Québec</b>, le système est basé sur un équilibre entre récompense et contrôle.</p>
+        <div class="info-panel" id="display">
+            <div class="rich-text">
+                <span class="source-label">Introduction Anatomique</span>
+                <h2>Le Réseau de la Récompense</h2>
+                <p>Le système dopaminergique ne travaille pas en vase clos. Il s'agit d'un réseau complexe de structures interconnectées qui collaborent pour évaluer les stimuli environnementaux. Ce "circuit de la récompense" a évolué pour assurer la survie en nous poussant vers la nourriture, la reproduction et l'interaction sociale.</p>
+                <p>Selon le <b>CHU de Québec</b>, la vulnérabilité à l'addiction numérique naît d'un déséquilibre entre trois systèmes : la <b>récompense</b> (qui pousse à agir), le <b>contrôle exécutif</b> (qui modère) et le <b>stress</b> (qui amplifie le besoin). Explorez les zones pour comprendre comment ce piratage biologique s'opère.</p>
+            </div>
         </div>
     </div>
     <script>
         const content = {
-            atv: { title: "L'Aire Tegmentale Ventrale (ATV)", text: "<p>Source : Institut du Cerveau. L'ATV est l'usine. Située dans le tronc cérébral, elle fabrique la dopamine à partir de la tyrosine. C'est elle qui envoie le signal de départ vers le reste du circuit dès qu'une récompense est anticipée.</p>" },
-            nac: { title: "Le Noyau Accumbens (NAc)", text: "<p>Source : Inserm. Le NAc transforme le signal chimique en impulsion physique. C'est la zone qui réagit le plus violemment aux 'récompenses variables' des applications mobiles.</p>" },
-            cpf: { title: "Le Cortex Préfrontal (CPF)", text: "<p>Source : CHU de Québec & UdeM. Le CPF est le centre de décision. Chez les jeunes adultes, sa maturation incomplète explique pourquoi il est si dur de freiner l'impulsion de scroller.</p>" }
-        default: {
-        title: "Le Réseau de la Récompense",
-        text: "<p>Le système dopaminergique ne travaille pas en vase clos. Il s'agit d'un réseau complexe de structures interconnectées qui collaborent pour évaluer les stimuli environnementaux.</p><p>Selon le <b>CHU de Québec</b>, la vulnérabilité à l'addiction numérique naît d'un déséquilibre entre trois systèmes : la <b>récompense</b>, le <b>contrôle exécutif</b> et le <b>stress</b>. Explorez les zones pour comprendre ce piratage biologique.</p>"
-    }
-};
-function update(z) { 
-    const d = content[z];
-    document.getElementById('display').innerHTML = `
-        <h2 style="text-transform: uppercase;">${d.title}</h2>
-        <div style="font-size:1.1rem">${d.text}</div>
-        ${z !== 'default' ? '<button onclick="update(\'default\')" style="margin-top:20px; background:var(--dark); color:white; border:none; padding:10px 20px; cursor:pointer; font-family:inherit; font-weight:800; text-transform:uppercase; box-shadow:4px 4px 0 var(--blue);">← Retour à l\'intro</button>' : ''}
-    `;}
+            atv: {
+                title: "L'Aire Tegmentale Ventrale (ATV)",
+                src: "Source : Institut du Cerveau",
+                text: "<p>Située dans le mésencéphale (tronc cérébral), l'ATV est le <b>groupe de neurones originel</b>. C'est ici que la dopamine est synthétisée à partir de l'acide aminé tyrosine.</p><p>L'ATV agit comme un radar : elle détecte les opportunités de récompense. Dès qu'un stimulus prometteur apparaît (le son d'un 'like' ou l'odeur d'un café), l'ATV projette des axones vers le reste du cerveau pour inonder les autres zones de dopamine. Elle est le point de départ de la <b>voie mésolimbique</b>, le canal principal de la motivation.</p>"
+            },
+            nac: {
+                title: "Le Noyau Accumbens (NAc)",
+                src: "Source : Inserm",
+                text: "<p>Le Noyau Accumbens est souvent qualifié d'interface entre la motivation et l'action. Il reçoit les décharges massives de dopamine venant de l'ATV.</p><p>Sa fonction principale est de traduire le signal chimique en <b>impulsion motrice</b>. C'est le NAc qui nous fait physiquement bouger pour obtenir la récompense. Dans les comportements liés aux écrans, le NAc est sur-sollicité par les 'récompenses variables' des algorithmes, ce qui peut mener à une désensibilisation des récepteurs dopaminergiques et à un besoin de stimulation toujours plus fort.</p>"
+            },
+            cpf: {
+                title: "Le Cortex Préfrontal (CPF)",
+                src: "Source : CHU de Québec & UdeM",
+                text: "<p>Le Cortex Préfrontal est le siège de nos fonctions supérieures : planification, jugement et inhibition des comportements. Il reçoit lui aussi de la dopamine via la <b>voie mésocorticale</b>.</p><p>Son rôle est crucial : il doit évaluer si l'impulsion venant du Noyau Accumbens est rationnelle. Cependant, l'UdeM souligne que chez les adolescents et jeunes adultes, le CPF n'est pas encore totalement mature. Ce 'frein biologique' est donc moins efficace, rendant le contrôle du scroll excessif physiologiquement plus difficile que chez un adulte mature.</p>"
+            }
+        };
+        function update(z) {
+            const d = content[z];
+            document.getElementById('display').innerHTML = `
+                <span class="source-label">${d.src}</span>
+                <h2>${d.title}</h2>
+                <div class="rich-text">${d.text}</div>
+            `;
+        }
     </script>
-    <footer>
-        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;">
-            <div><h3 style="color: var(--green);">Communiquer la science</h3><p style="color: #94a3b8; font-size: 0.9rem;">Dossier sur l'anatomie dopaminergique.</p></div>
-            <div><h4 style="text-transform: uppercase; font-size: 0.8rem;">Sources</h4><ul style="list-style: none; padding: 0; font-size: 0.8rem; color: #94a3b8;"><li>• CHU Québec</li><li>• Institut du Cerveau</li></ul></div>
-            <div><h4 style="text-transform: uppercase; font-size: 0.8rem;">Navigation</h4><div style="display: flex; flex-direction: column; font-size: 0.8rem;"><a href="index.html" style="color: var(--green);">Accueil</a><a href="chimie.html" style="color: var(--green);">02. Chimie</a></div></div>
-        </div>
-    </footer>
 </body>
 </html>
