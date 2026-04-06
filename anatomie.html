@@ -6,107 +6,134 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
         :root { --bg: #fafafa; --blue: #3b82f6; --dark: #121212; --green: #00FF66; --yellow: #FFD600; --pink: #FF6BB3; }
-        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.5; }
-        nav { background: white; border-bottom: 4px solid var(--dark); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; }
-        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 15px; padding: 10px; }
+        
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.5; color: var(--dark); }
+        
+        /* Navigation Sticky */
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
+        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; border: 2px solid transparent; }
+        .nav-menu a.active { background: var(--green); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
+
+        /* Hero Section (La bande titre) */
+        .hero { background: var(--green); color: var(--dark); padding: 80px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
+        .hero h1 { font-size: 4rem; margin: 0; text-transform: uppercase; -webkit-text-stroke: 1.5px var(--dark); line-height: 0.9; }
+
         .container { max-width: 1200px; margin: 40px auto; padding: 0 20px; display: grid; grid-template-columns: 1fr 1.2fr; gap: 40px; }
-        .brain-card { background: white; border: 4px solid var(--dark); padding: 30px; box-shadow: 12px 12px 0 var(--dark); position: sticky; top: 120px; }
-        .info-panel { background: white; border: 4px solid var(--dark); padding: 40px; box-shadow: 12px 12px 0 var(--dark); }
+        
+        .card { background: white; border: 4px solid var(--dark); padding: 30px; box-shadow: 12px 12px 0 var(--dark); }
+        .info-panel { background: white; border: 4px solid var(--dark); padding: 40px; box-shadow: 12px 12px 0 var(--dark); min-height: 450px; position: relative; }
+        
         .zone-btn { cursor: pointer; transition: 0.2s; }
-        .zone-btn:hover { filter: brightness(1.2); transform: scale(1.05); }
-        h2 { text-transform: uppercase; font-size: 2.2rem; margin-bottom: 20px; line-height: 1; }
-        .source-label { background: var(--dark); color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 15px; }
-        .rich-text p { margin-bottom: 20px; font-size: 1.1rem; }
-        .rich-text b { color: var(--blue); }
+        .zone-btn:hover { filter: brightness(1.1); transform: scale(1.02); }
+        
+        h2 { text-transform: uppercase; font-size: 2.2rem; margin-top: 0; margin-bottom: 20px; line-height: 1; }
+        .source-label { background: var(--dark); color: white; padding: 4px 10px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 15px; text-transform: uppercase; }
+        
+        .reset-btn { margin-top: 20px; background: var(--dark); color: white; border: none; padding: 12px 20px; cursor: pointer; font-family: inherit; font-weight: 800; text-transform: uppercase; box-shadow: 4px 4px 0 var(--blue); transition: 0.2s; }
+        .reset-btn:hover { transform: translate(-2px, -2px); box-shadow: 6px 6px 0 var(--blue); }
+
+        footer { background: var(--dark); color: white; padding: 80px 20px; border-top: 8px solid var(--yellow); margin-top: 100px; }
     </style>
 </head>
 <body>
+
     <nav>
         <span class="nav-brand">Communiquer la science</span>
         <div class="nav-menu">
             <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html" style="background:var(--green); border:2px solid var(--dark)">01. LE CIRCUIT</a>
+            <a href="anatomie.html" class="active">01. LE CIRCUIT</a>
             <a href="chimie.html">02. LE MESSAGER</a>
             <a href="mecanisme.html">03. LA MOTIVATION</a>
             <a href="addiction.html">04. LES USAGES</a>
         </div>
     </nav>
-    <header class="hero"><h1>🧠 ANATOMIE</h1></header>
+
+    <header class="hero">
+        <h1>🧠 L'ARCHITECTURE DU DÉSIR</h1>
+    </header>
+
     <div class="container">
-        <div class="brain-card">
-            <h2 style="font-size:1.5rem">Architecture du Désir</h2>
+        <div class="card">
+            <h2 style="font-size:1.5rem">Carte Interactive</h2>
             <svg viewBox="0 0 500 350" xmlns="http://www.w3.org/2000/svg">
                 <path d="M100,200 Q100,50 300,50 Q450,50 450,220 Q450,300 300,310 Q100,280 100,200" fill="#f1f5f9" stroke="#121212" stroke-width="4"/>
+                
                 <circle class="zone-btn" cx="310" cy="230" r="22" fill="var(--blue)" stroke="var(--dark)" stroke-width="3" onclick="update('atv')"/>
                 <circle class="zone-btn" cx="240" cy="180" r="22" fill="var(--yellow)" stroke="var(--dark)" stroke-width="3" onclick="update('nac')"/>
                 <rect class="zone-btn" x="120" y="140" width="45" height="90" rx="12" fill="var(--pink)" stroke="var(--dark)" stroke-width="3" onclick="update('cpf')"/>
+                
                 <text x="310" y="270" text-anchor="middle" font-weight="900" font-size="14">ATV</text>
                 <text x="240" y="220" text-anchor="middle" font-weight="900" font-size="14">NAc</text>
                 <text x="142" y="250" text-anchor="middle" font-weight="900" font-size="14">CPF</text>
             </svg>
-            <p><i>Cliquez sur les centres nerveux pour isoler leurs fonctions spécialisées.</i></p>
+            <p><i>Cliquez sur les centres nerveux (ATV, NAc, CPF) pour isoler leurs fonctions.</i></p>
+            <button onclick="update('default')" style="width:100%; background:white; border:3px solid var(--dark); padding:10px; font-family:inherit; font-weight:800; cursor:pointer; box-shadow:4px 4px 0 var(--dark);">RÉINITIALISER LA VUE ↺</button>
         </div>
+
         <div class="info-panel" id="display">
-            <div class="rich-text">
-                <span class="source-label">Introduction Anatomique</span>
-                <h2>Le Réseau de la Récompense</h2>
-                <p>Le système dopaminergique ne travaille pas en vase clos. Il s'agit d'un réseau complexe de structures interconnectées qui collaborent pour évaluer les stimuli environnementaux. Ce "circuit de la récompense" a évolué pour assurer la survie en nous poussant vers la nourriture, la reproduction et l'interaction sociale.</p>
-                <p>Selon le <b>CHU de Québec</b>, la vulnérabilité à l'addiction numérique naît d'un déséquilibre entre trois systèmes : la <b>récompense</b> (qui pousse à agir), le <b>contrôle exécutif</b> (qui modère) et le <b>stress</b> (qui amplifie le besoin). Explorez les zones pour comprendre comment ce piratage biologique s'opère.</p>
+            <span class="source-label">Source : CHU de Québec</span>
+            <h2>Le Réseau de la Récompense</h2>
+            <div style="font-size:1.1rem">
+                <p>Le système dopaminergique ne travaille pas en vase clos. Il s'agit d'un réseau complexe de structures interconnectées qui collaborent pour évaluer les stimuli environnementaux.</p>
+                <p>Selon le <b>CHU de Québec</b>, la vulnérabilité à l'addiction numérique naît d'un déséquilibre entre trois systèmes : la <b>récompense</b> (qui pousse à agir), le <b>contrôle exécutif</b> (qui modère) et le <b>stress</b> (qui amplifie le besoin). Explorez les zones pour comprendre ce piratage biologique.</p>
             </div>
         </div>
     </div>
+
     <script>
         const content = {
             atv: {
                 title: "L'Aire Tegmentale Ventrale (ATV)",
                 src: "Source : Institut du Cerveau",
-                text: "<p>Située dans le mésencéphale (tronc cérébral), l'ATV est le <b>groupe de neurones originel</b>. C'est ici que la dopamine est synthétisée à partir de l'acide aminé tyrosine.</p><p>L'ATV agit comme un radar : elle détecte les opportunités de récompense. Dès qu'un stimulus prometteur apparaît (le son d'un 'like' ou l'odeur d'un café), l'ATV projette des axones vers le reste du cerveau pour inonder les autres zones de dopamine. Elle est le point de départ de la <b>voie mésolimbique</b>, le canal principal de la motivation.</p>"
+                text: "<p>Située dans le tronc cérébral, l'ATV est le point de départ. Elle fabrique la dopamine et l'envoie vers le reste du cerveau dès qu'une récompense est anticipée. C'est le 'moteur' du circuit.</p>"
             },
             nac: {
                 title: "Le Noyau Accumbens (NAc)",
                 src: "Source : Inserm",
-                text: "<p>Le Noyau Accumbens est souvent qualifié d'interface entre la motivation et l'action. Il reçoit les décharges massives de dopamine venant de l'ATV.</p><p>Sa fonction principale est de traduire le signal chimique en <b>impulsion motrice</b>. C'est le NAc qui nous fait physiquement bouger pour obtenir la récompense. Dans les comportements liés aux écrans, le NAc est sur-sollicité par les 'récompenses variables' des algorithmes, ce qui peut mener à une désensibilisation des récepteurs dopaminergiques et à un besoin de stimulation toujours plus fort.</p>"
+                text: "<p>C'est l'interface entre la motivation et l'action. Le NAc traduit le signal chimique en désir physique. C'est la zone qui réagit le plus aux récompenses immédiates des réseaux sociaux.</p>"
             },
             cpf: {
                 title: "Le Cortex Préfrontal (CPF)",
-                src: "Source : CHU de Québec & UdeM",
-                text: "<p>Le Cortex Préfrontal est le siège de nos fonctions supérieures : planification, jugement et inhibition des comportements. Il reçoit lui aussi de la dopamine via la <b>voie mésocorticale</b>.</p><p>Son rôle est crucial : il doit évaluer si l'impulsion venant du Noyau Accumbens est rationnelle. Cependant, l'UdeM souligne que chez les adolescents et jeunes adultes, le CPF n'est pas encore totalement mature. Ce 'frein biologique' est donc moins efficace, rendant le contrôle du scroll excessif physiologiquement plus difficile que chez un adulte mature.</p>"
+                src: "Source : CHU de Québec / UdeM",
+                text: "<p>Le centre de contrôle et de décision. Il est censé modérer les impulsions du NAc. Comme il mature tardivement chez les jeunes adultes, le 'frein' est souvent trop faible face à la stimulation numérique.</p>"
+            },
+            default: {
+                title: "Le Réseau de la Récompense",
+                src: "Source : CHU de Québec",
+                text: "<p>Le système dopaminergique est un réseau complexe de structures interconnectées. Selon le <b>CHU de Québec</b>, l'équilibre entre récompense, contrôle et stress est la clé.</p><p>Explorez les zones (ATV, NAc, CPF) pour voir comment elles collaborent ou entrent en conflit.</p>"
             }
         };
+
         function update(z) {
             const d = content[z];
-            document.getElementById('display').innerHTML = `
-                <span class="source-label">${d.src}</span>
-                <h2>${d.title}</h2>
-                <div class="rich-text">${d.text}</div>
-            `;
+            let html = `<span class="source-label">${d.src}</span><h2>${d.title}</h2><div style="font-size:1.1rem">${d.text}</div>`;
+            if (z !== 'default') {
+                html += `<button class="reset-btn" onclick="update('default')">← Retour à l'intro</button>`;
+            }
+            document.getElementById('display').innerHTML = html;
         }
     </script>
-    <footer style="background: var(--dark); color: white; padding: 80px 20px; border-top: 8px solid var(--yellow); margin-top: 100px;">
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px;">
-        
-        <div>
-            <h3 style="text-transform: uppercase; color: var(--yellow); font-size: 1.5rem; margin-top: 0; letter-spacing: 1px;">Communiquer la science</h3>
-            <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; max-width: 500px;">
-                Un dossier d'exploration neurobiologique sur la dopamine. Nous décodons les mécanismes du désir, de la motivation et de l'impact des interfaces numériques sur le cerveau des jeunes adultes.
-            </p>
-            <div style="margin-top: 30px; font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #334155; padding-top: 20px;">
-                © 2026 — Plateforme de médiation scientifique — Montréal, QC
-            </div>
-        </div>
 
-        <div>
-            <h4 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: white; margin-bottom: 25px; border-left: 4px solid var(--blue); padding-left: 15px;">Plan du dossier</h4>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                <a href="index.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--yellow)'" onmouseout="this.style.color='white'">→ ACCUEIL</a>
-                <a href="anatomie.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='white'">→ 01. LE CIRCUIT (ANATOMIE)</a>
-                <a href="chimie.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='white'">→ 02. LE MESSAGER (CHIMIE)</a>
-                <a href="mecanisme.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='white'">→ 03. LA MOTIVATION (MÉCANISME)</a>
-                <a href="addiction.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='white'">→ 04. LES USAGES (NUMÉRIQUE)</a>
+    <footer>
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px;">
+            <div>
+                <h3 style="text-transform: uppercase; color: var(--yellow); font-size: 1.5rem; margin-top: 0; letter-spacing: 1px;">Communiquer la science</h3>
+                <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; max-width: 500px;">Un dossier d'exploration neurobiologique sur la dopamine. Nous décodons les mécanismes du désir et l'impact des interfaces numériques.</p>
+                <div style="margin-top: 30px; font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #334155; padding-top: 20px;">© 2026 — Montréal, QC</div>
+            </div>
+            <div>
+                <h4 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: white; margin-bottom: 25px; border-left: 4px solid var(--blue); padding-left: 15px;">Plan du dossier</h4>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                    <a href="index.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">→ ACCUEIL</a>
+                    <a href="anatomie.html" style="color: var(--green); text-decoration: none; font-weight: 700; font-size: 1rem;">→ 01. LE CIRCUIT</a>
+                    <a href="chimie.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">→ 02. LE MESSAGER</a>
+                    <a href="mecanisme.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">→ 03. LA MOTIVATION</a>
+                    <a href="addiction.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem;">→ 04. LES USAGES</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
+
 </body>
 </html>
