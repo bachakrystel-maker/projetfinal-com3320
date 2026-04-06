@@ -2,44 +2,45 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>DOPAMINE | Chimie</title>
+    <title>DOPAMINE | Section 2</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
         :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; }
-        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
+        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; color: #1e293b; }
         nav { background: white; border-bottom: 2px solid #d1fae5; padding: 15px; text-align: center; }
-        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 10px; }
+        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 15px; border-radius: 12px; }
         .nav-menu a.active { background: var(--blue); color: white; }
         .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
         .container { max-width: 850px; margin: -30px auto 60px auto; padding: 0 20px; }
-        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); }
-        h2 { color: var(--blue); font-size: 2rem; }
-        .synapse-box { border-left: 5px solid var(--green); padding-left: 20px; background: #f8fafc; padding: 20px; border-radius: 10px; }
+        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); border: 1px solid #d1fae5; }
+        .synapse-visual { background: #f8fafc; border: 2px dashed var(--blue); border-radius: 20px; padding: 25px; margin: 20px 0; text-align: center; font-weight: bold; }
+        h2 { color: var(--blue); }
+        .btn-next { display: inline-block; background: var(--blue); color: white; padding: 15px 30px; border-radius: 50px; text-decoration: none; font-weight: 800; float: right; }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-menu">
             <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html">01. ANATOMIE</a>
-            <a href="chimie.html" class="active">02. CHIMIE</a>
-            <a href="mecanisme.html">03. MÉCANISME</a>
-            <a href="addiction.html">04. ADDICTION</a>
+            <a href="anatomie.html">SECTION 1</a>
+            <a href="chimie.html" class="active">SECTION 2</a>
+            <a href="mecanisme.html">SECTION 3</a>
+            <a href="addiction.html">SECTION 4</a>
         </div>
     </nav>
     <header class="hero">
-        <h1>La Synapse : Le Dialogue Invisible</h1>
-        <p>Comment une molécule traverse le vide pour changer votre état d'esprit.</p>
+        <h1>🧪 02. Le Messager Chimique</h1>
+        <p>Le dialogue invisible entre vos neurones.</p>
     </header>
     <main class="container">
         <div class="card">
-            <h2>L'influx chimique</h2>
-            <p>La dopamine ne voyage pas par câbles directs. Entre chaque neurone existe un petit fossé : la <strong>fente synaptique</strong>. Pour transmettre l'information, le neurone émetteur libère des vésicules remplies de dopamine.</p>
-            <div class="synapse-box">
-                <p><strong>Le rôle des récepteurs :</strong> Une fois libérée, la dopamine vient se loger dans des récepteurs spécifiques (D1 à D5) sur le neurone suivant, comme une clé dans une serrure. C'est ce contact qui déclenche le signal de motivation.</p>
-                <p><strong>La recapture :</strong> Pour éviter la surcharge, le cerveau possède des pompes qui aspirent l'excès de dopamine. De nombreuses substances (comme la cocaïne) agissent en bloquant ces pompes, laissant la dopamine inonder le cerveau artificiellement.</p>
+            <h2>La communication synaptique</h2>
+            <p>Comme l'explique l'<strong>Inserm</strong>, la dopamine est un messager chimique qui permet aux neurones de se parler. Elle traverse un espace minuscule appelé la synapse.</p>
+            <div class="synapse-visual">
+                Émetteur ⚡ → [ Molécule de Dopamine ] → Récepteur 🗝️
             </div>
-            <p style="margin-top:20px;">Comprendre ce mécanisme est la clé pour saisir comment les déséquilibres chimiques affectent des maladies comme Parkinson (manque de dopamine) ou la schizophrénie (excès).</p>
+            <p><strong>L'équilibre :</strong> L'Institut du Cerveau souligne que ce système influence nos émotions. Lorsqu'il est trop stimulé (écrans, jeux), les récepteurs peuvent se saturer, changeant notre perception du plaisir au quotidien.</p>
+            <a href="mecanisme.html" class="btn-next">Suivant : La Motivation →</a>
         </div>
     </main>
 </body>
