@@ -2,40 +2,35 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>LA MOTIVATION | Communiquer la Science</title>
+    <title>03. LA MOTIVATION | Communiquer la Science</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500;700;800&display=swap');
-        :root { --bg: #f0fdfa; --blue: #3b82f6; --green: #10b981; }
-        body { font-family: 'Quicksand', sans-serif; background-color: var(--bg); margin: 0; }
-        nav { background: white; border-bottom: 2px solid #d1fae5; padding: 20px 0; text-align: center; }
-        .nav-brand { display: block; font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; color: #64748b; margin-bottom: 15px; text-transform: uppercase; }
-        .nav-menu a { text-decoration: none; color: #64748b; font-weight: 700; margin: 0 10px; padding: 10px 18px; border-radius: 12px; font-size: 0.85rem; }
-        .nav-menu a.active { background: var(--blue); color: white; }
-        .hero { background: linear-gradient(135deg, var(--blue), var(--green)); color: white; padding: 60px 20px; text-align: center; border-bottom-left-radius: 40px; border-bottom-right-radius: 40px; }
-        .container { max-width: 850px; margin: -30px auto 60px auto; padding: 0 20px; }
-        .card { background: white; border-radius: 35px; padding: 45px; box-shadow: 0 15px 35px rgba(0,0,0,0.05); }
-        .formula { background: #eff6ff; padding: 25px; border-radius: 15px; font-weight: bold; color: var(--blue); border-left: 6px solid var(--blue); font-size: 1.2rem; }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
+        :root { --bg: #fafafa; --orange: #FF8A00; --dark: #121212; --blue: #3b82f6; }
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; }
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; }
+        .container { max-width: 950px; margin: 60px auto; padding: 0 20px; }
+        .bento { background: var(--orange); border: 5px solid var(--dark); padding: 50px; box-shadow: 15px 15px 0 var(--dark); }
+        .formula-card { background: white; border: 4px solid var(--dark); padding: 30px; margin: 30px 0; font-family: 'Courier New', Courier, monospace; font-size: 1.6rem; font-weight: 900; text-align: center; }
+        h2 { text-transform: uppercase; font-size: 2.8rem; margin-top: 0; line-height: 0.9; }
+        .text-block { background: white; border: 3px solid var(--dark); padding: 30px; margin-top: 30px; font-size: 1.15rem; }
     </style>
 </head>
 <body>
-    <nav>
-        <span class="nav-brand">Communiquer la science</span>
-        <div class="nav-menu">
-            <a href="index.html">ACCUEIL</a>
-            <a href="anatomie.html">01. LE CIRCUIT</a>
-            <a href="chimie.html">02. LE MESSAGER</a>
-            <a href="mecanisme.html" class="active">03. LA MOTIVATION</a>
-            <a href="addiction.html">04. LES USAGES</a>
+    <nav><span class="nav-brand">Communiquer la science</span></nav>
+    <div class="container">
+        <div class="bento">
+            <h2>L'Erreur de Prédiction : Pourquoi l'imprévisible nous rend fous</h2>
+            <div class="text-block">
+                <p>La recherche publiée dans <b>Nature Neuroscience</b> a révolutionné notre compréhension : la dopamine ne code pas le plaisir, mais l'écart entre ce qu'on attendait et ce qu'on a reçu. C'est ce qu'on appelle l'<b>Erreur de Prédiction de la Récompense (RPE)</b>.</p>
+                <div class="formula-card">Δ Dopamine = Récompense - Attente</div>
+                <p><b>Le scénario :</b> Si vous ouvrez Instagram en espérant 10 likes et que vous en voyez 50, votre cerveau explose de dopamine (Erreur positive). Si vous en recevez 10 (conforme à l'attente), la libération est minimale. Si vous n'en recevez aucun, la dopamine chute brutalement (Erreur négative), provoquant un sentiment d'anxiété et de vide.</p>
+            </div>
+            <div class="text-block">
+                <p><b>Le calcul de la valeur (Source : Cell / Trends in Neurosciences) :</b> Au-delà de la surprise, la dopamine sert de monnaie d'échange pour l'effort. Le cerveau calcule en permanence : <i>Est-ce que l'effort à fournir (étudier 2h) vaut la récompense espérée (une bonne note dans 3 semaines) ?</i></p>
+                <p>La dopamine 'finance' l'effort. Si le cerveau peut obtenir une récompense immédiate avec un effort quasi nul (scroller TikTok), il dévalorise systématiquement les tâches à récompense différée. Ce n'est pas une question de paresse, mais une optimisation biologique de l'énergie.</p>
+            </div>
         </div>
-    </nav>
-    <header class="hero"><h1>⚡ La Motivation</h1></header>
-    <main class="container">
-        <div class="card">
-            <h2>Évaluer la valeur de l'action</h2>
-            <p>Selon <strong>Nature Neuroscience</strong>, la dopamine n'est pas le plaisir pur. C'est un signal qui évalue si un effort vaut la peine d'être fourni.</p>
-            <div class="formula">Dopamine = Est-ce que l'effort en vaut la peine ? 🤔</div>
-            <p>On peut se sentir poussé vers son téléphone (forte motivation) sans pour autant ressentir de plaisir une fois l'application ouverte. C'est la distinction entre l'envie et la satisfaction.</p>
-        </div>
-    </main>
+    </div>
 </body>
 </html>
