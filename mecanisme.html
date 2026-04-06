@@ -7,30 +7,43 @@
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
         :root { --bg: #fafafa; --orange: #FF8A00; --dark: #121212; --blue: #3b82f6; }
         body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; }
-        nav { background: white; border-bottom: 4px solid var(--dark); padding: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; }
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
+        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; }
+        .nav-menu a.active { background: var(--orange); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
+        .hero { background: var(--orange); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
         .container { max-width: 950px; margin: 60px auto; padding: 0 20px; }
-        .bento { background: var(--orange); border: 5px solid var(--dark); padding: 50px; box-shadow: 15px 15px 0 var(--dark); }
-        .formula-card { background: white; border: 4px solid var(--dark); padding: 30px; margin: 30px 0; font-family: 'Courier New', Courier, monospace; font-size: 1.6rem; font-weight: 900; text-align: center; }
-        h2 { text-transform: uppercase; font-size: 2.8rem; margin-top: 0; line-height: 0.9; }
-        .text-block { background: white; border: 3px solid var(--dark); padding: 30px; margin-top: 30px; font-size: 1.15rem; }
+        .card { background: white; border: 5px solid var(--dark); padding: 50px; box-shadow: 15px 15px 0 var(--dark); }
+        .formula { background: #fef3c7; border: 3px solid var(--dark); padding: 30px; font-family: monospace; font-size: 1.5rem; font-weight: bold; text-align: center; margin: 20px 0; }
+        footer { background: var(--dark); color: white; padding: 60px 20px; border-top: 5px solid var(--orange); margin-top: 80px; }
     </style>
 </head>
 <body>
-    <nav><span class="nav-brand">Communiquer la science</span></nav>
+    <nav>
+        <span class="nav-brand">Communiquer la science</span>
+        <div class="nav-menu">
+            <a href="index.html">ACCUEIL</a>
+            <a href="anatomie.html">01. LE CIRCUIT</a>
+            <a href="chimie.html">02. LE MESSAGER</a>
+            <a href="mecanisme.html" class="active">03. LA MOTIVATION</a>
+            <a href="addiction.html">04. LES USAGES</a>
+        </div>
+    </nav>
+    <header class="hero"><h1>⚡ LA MOTIVATION : L'ERREUR DE PRÉDICTION</h1></header>
     <div class="container">
-        <div class="bento">
-            <h2>L'Erreur de Prédiction : Pourquoi l'imprévisible nous rend fous</h2>
-            <div class="text-block">
-                <p>La recherche publiée dans <b>Nature Neuroscience</b> a révolutionné notre compréhension : la dopamine ne code pas le plaisir, mais l'écart entre ce qu'on attendait et ce qu'on a reçu. C'est ce qu'on appelle l'<b>Erreur de Prédiction de la Récompense (RPE)</b>.</p>
-                <div class="formula-card">Δ Dopamine = Récompense - Attente</div>
-                <p><b>Le scénario :</b> Si vous ouvrez Instagram en espérant 10 likes et que vous en voyez 50, votre cerveau explose de dopamine (Erreur positive). Si vous en recevez 10 (conforme à l'attente), la libération est minimale. Si vous n'en recevez aucun, la dopamine chute brutalement (Erreur négative), provoquant un sentiment d'anxiété et de vide.</p>
-            </div>
-            <div class="text-block">
-                <p><b>Le calcul de la valeur (Source : Cell / Trends in Neurosciences) :</b> Au-delà de la surprise, la dopamine sert de monnaie d'échange pour l'effort. Le cerveau calcule en permanence : <i>Est-ce que l'effort à fournir (étudier 2h) vaut la récompense espérée (une bonne note dans 3 semaines) ?</i></p>
-                <p>La dopamine 'finance' l'effort. Si le cerveau peut obtenir une récompense immédiate avec un effort quasi nul (scroller TikTok), il dévalorise systématiquement les tâches à récompense différée. Ce n'est pas une question de paresse, mais une optimisation biologique de l'énergie.</p>
-            </div>
+        <div class="card">
+            <h2 style="text-transform: uppercase;">Le Calcul de la Valeur</h2>
+            <p>Selon <b>Nature Neuroscience</b>, la dopamine code l'<b>Erreur de Prédiction de la Récompense</b>. Ce n'est pas le plaisir que vous ressentez, c'est l'écart entre votre attente et la réalité.</p>
+            <div class="formula">Δ Dopamine = Récompense - Attente</div>
+            <p>L'étude dans <b>Cell</b> montre que la dopamine 'finance' l'effort. Votre cerveau pèse en permanence le coût (l'effort à faire) contre le gain espéré. Le scroll numérique gagne car l'effort est nul pour un gain imprévisible mais constant.</p>
         </div>
     </div>
+    <footer>
+        <div style="max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 40px;">
+            <div><h3 style="color: var(--orange);">Communiquer la science</h3><p style="color: #94a3b8; font-size: 0.9rem;">Dossier sur la psychologie de la motivation.</p></div>
+            <div><h4 style="text-transform: uppercase; font-size: 0.8rem;">Sources</h4><ul style="list-style: none; padding: 0; font-size: 0.8rem; color: #94a3b8;"><li>• Nature</li><li>• Cell.com</li></ul></div>
+            <div><h4 style="text-transform: uppercase; font-size: 0.8rem;">Navigation</h4><div style="display: flex; flex-direction: column; font-size: 0.8rem;"><a href="chimie.html" style="color: var(--orange);">02. Chimie</a><a href="addiction.html" style="color: var(--orange);">04. Usages</a></div></div>
+        </div>
+    </footer>
 </body>
 </html>
