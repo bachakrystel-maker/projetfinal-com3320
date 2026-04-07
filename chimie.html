@@ -6,19 +6,29 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
         :root { --bg: #fafafa; --dark: #121212; --purple: #BC77FF; --yellow: #FFD600; --blue: #3b82f6; }
-        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; }
+        
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; color: var(--dark); }
+        
         nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
         .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
         .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; }
         .nav-menu a.active { background: var(--purple); border: 2px solid var(--dark); color: white; box-shadow: 4px 4px 0 var(--dark); }
-        .hero { background: var(--purple); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
+
+        .hero { background: var(--purple); color: white; padding: 50px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
+        .hero h1 { font-size: 2.8rem; margin: 0; text-transform: uppercase; -webkit-text-stroke: 1px var(--dark); line-height: 1.1; }
+
         .container { max-width: 900px; margin: 50px auto; padding: 0 20px; }
-        .card { background: white; border: 4px solid var(--dark); padding: 50px; box-shadow: 15px 15px 0 var(--dark); margin-bottom: 50px; }
-        .highlight { background: var(--yellow); border: 3px solid var(--dark); padding: 30px; box-shadow: 8px 8px 0 var(--dark); }
-        footer { background: var(--dark); color: white; padding: 60px 20px; border-top: 5px solid var(--purple); margin-top: 80px; }
+        .main-card { background: white; border: 4px solid var(--dark); padding: 50px; box-shadow: 15px 15px 0 var(--dark); margin-bottom: 50px; }
+        .source-tag { background: var(--dark); color: white; padding: 4px 12px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
+        
+        h2 { font-size: 2.2rem; text-transform: uppercase; line-height: 1; margin-top: 0; margin-bottom: 25px; border-bottom: 4px solid var(--purple); display: inline-block; }
+        .highlight-box { background: var(--yellow); border: 3px solid var(--dark); padding: 30px; box-shadow: 8px 8px 0 var(--dark); margin-top: 40px; }
+        
+        footer { background: var(--dark); color: white; padding: 80px 20px; border-top: 8px solid var(--yellow); margin-top: 100px; }
     </style>
 </head>
 <body>
+
     <nav>
         <span class="nav-brand">Communiquer la science</span>
         <div class="nav-menu">
@@ -29,8 +39,13 @@
             <a href="addiction.html">04. LES USAGES</a>
         </div>
     </nav>
-    <header class="hero"><h1>🧪 LA CHIMIE DU MESSAGER</h1></header>
-    <div class="main-card">
+
+    <header class="hero">
+        <h1>🧪 LE RÉSEAU CHIMIQUE</h1>
+    </header>
+
+    <main class="container">
+        <div class="main-card">
     <span class="source-tag">Source : Institut du Cerveau / Inserm</span>
     <h2>Comment ton cerveau reste connecté</h2>
     <p>La dopamine n'est pas un liquide, c'est le <b>signal de connexion</b> de ton cerveau. Pour que tu puisses avoir envie de faire un truc, tes neurones doivent se transmettre ce signal en sautant par-dessus un petit vide.</p>
@@ -48,30 +63,26 @@
         <p>Ton cerveau s'adapte pour éviter la surchauffe en débranchant ses propres antennes. C'est pour ça qu'au bout d'un moment, ton réseau interne est saturé. (Source : Inserm).</p>
     </div>
 </div>
-    <footer style="background: var(--dark); color: white; padding: 80px 20px; border-top: 8px solid var(--yellow); margin-top: 100px;">
-    <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px;">
-        
-        <div>
-            <h3 style="text-transform: uppercase; color: var(--yellow); font-size: 1.5rem; margin-top: 0; letter-spacing: 1px;">Communiquer la science</h3>
-            <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; max-width: 500px;">
-                Un dossier d'exploration neurobiologique sur la dopamine. Nous décodons les mécanismes du désir, de la motivation et de l'impact des interfaces numériques sur le cerveau des jeunes adultes.
-            </p>
-            <div style="margin-top: 30px; font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #334155; padding-top: 20px;">
-                © 2026 — Plateforme de médiation scientifique — Montréal, QC
-            </div>
-        </div>
+    </main>
 
-        <div>
-            <h4 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: white; margin-bottom: 25px; border-left: 4px solid var(--blue); padding-left: 15px;">Plan du dossier</h4>
-            <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                <a href="index.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--yellow)'" onmouseout="this.style.color='white'">→ ACCUEIL</a>
-                <a href="anatomie.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--green)'" onmouseout="this.style.color='white'">→ 01. LE CIRCUIT (ANATOMIE)</a>
-                <a href="chimie.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--purple)'" onmouseout="this.style.color='white'">→ 02. LE MESSAGER (CHIMIE)</a>
-                <a href="mecanisme.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--orange)'" onmouseout="this.style.color='white'">→ 03. LA MOTIVATION (MÉCANISME)</a>
-                <a href="addiction.html" style="color: white; text-decoration: none; font-weight: 700; font-size: 1rem; transition: 0.2s;" onmouseover="this.style.color='var(--pink)'" onmouseout="this.style.color='white'">→ 04. LES USAGES (NUMÉRIQUE)</a>
+    <footer>
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px;">
+            <div>
+                <h3 style="text-transform: uppercase; color: var(--yellow); font-size: 1.5rem; margin-top: 0; letter-spacing: 1px;">Communiquer la science</h3>
+                <p style="color: #94a3b8; font-size: 1.1rem; line-height: 1.6; max-width: 500px;">On décode la biologie pour t'aider à comprendre pourquoi ton cerveau réagit comme ça face aux écrans.</p>
+                <div style="margin-top: 30px; font-size: 0.8rem; color: #64748b; text-transform: uppercase; letter-spacing: 2px; border-top: 1px solid #334155; padding-top: 20px;">© 2026 — Montréal, QC</div>
+            </div>
+            <div>
+                <h4 style="text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px; color: white; margin-bottom: 25px; border-left: 4px solid var(--blue); padding-left: 15px;">Plan du dossier</h4>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
+                    <a href="index.html" style="color: white; text-decoration: none; font-weight: 700;">→ ACCUEIL</a>
+                    <a href="anatomie.html" style="color: white; text-decoration: none; font-weight: 700;">→ 01. LE CIRCUIT</a>
+                    <a href="chimie.html" style="color: var(--purple); text-decoration: none; font-weight: 700;">→ 02. LE MESSAGER</a>
+                    <a href="mecanisme.html" style="color: white; text-decoration: none; font-weight: 700;">→ 03. LA MOTIVATION</a>
+                    <a href="addiction.html" style="color: white; text-decoration: none; font-weight: 700;">→ 04. LES USAGES</a>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </body>
 </html>
