@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>05. SOLUTIONS | Communiquer la Science</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&display=swap');
+        :root { --bg: #fafafa; --yellow: #FFD600; --dark: #121212; --blue: #3b82f6; --pink: #FF6BB3; --green: #00FF66; }
+        
+        body { font-family: 'Space Grotesk', sans-serif; background-color: var(--bg); margin: 0; line-height: 1.6; color: var(--dark); }
+        
+        /* Navigation Sticky */
+        nav { background: white; border-bottom: 4px solid var(--dark); padding: 15px 20px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; }
+        .nav-brand { font-weight: 800; text-transform: uppercase; border: 3px solid var(--dark); padding: 5px 15px; box-shadow: 4px 4px 0 var(--dark); background: white; font-size: 0.9rem; }
+        .nav-menu a { text-decoration: none; color: var(--dark); font-weight: 700; margin-left: 10px; padding: 8px 12px; border: 2px solid transparent; }
+        .nav-menu a.active { background: var(--yellow); border: 2px solid var(--dark); box-shadow: 4px 4px 0 var(--dark); }
+
+        /* Hero Section */
+        .hero { background: var(--yellow); color: var(--dark); padding: 50px 20px; text-align: center; border-bottom: 5px solid var(--dark); }
+        .hero h1 { font-size: 2.8rem; margin: 0; text-transform: uppercase; -webkit-text-stroke: 1px var(--dark); line-height: 1.1; }
+
+        .container { max-width: 1000px; margin: 50px auto; padding: 0 20px; }
+        
+        /* Cartes Solutions */
+        .solution-card { background: white; border: 4px solid var(--dark); padding: 40px; box-shadow: 12px 12px 0 var(--dark); margin-bottom: 40px; }
+        .tag { background: var(--dark); color: white; padding: 4px 12px; font-size: 0.8rem; font-weight: 800; display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
+        
+        h2 { font-size: 2rem; text-transform: uppercase; line-height: 1; margin-top: 0; margin-bottom: 20px; border-bottom: 4px solid var(--yellow); display: inline-block; }
+        h3 { font-size: 1.3rem; color: var(--blue); text-transform: uppercase; margin-top: 25px; }
+
+        .tip-box { background: #fef3c7; border: 2px dashed var(--dark); padding: 20px; margin-top: 20px; font-weight: 700; }
+
+        footer { background: var(--dark); color: white; padding: 80px 20px; border-top: 8px solid var(--yellow); margin-top: 100px; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <span class="nav-brand">Communiquer la science</span>
+        <div class="nav-menu">
+            <a href="index.html">ACCUEIL</a>
+            <a href="anatomie.html">01. LE CIRCUIT</a>
+            <a href="chimie.html">02. LE MESSAGER</a>
+            <a href="mecanisme.html">03. LA MOTIVATION</a>
+            <a href="addiction.html">04. LES USAGES</a>
+            <a href="solutions.html" class="active">05. SOLUTIONS</a>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <h1>🎯 REPRENDRE LE CONTRÔLE</h1>
+    </header>
+
+    <main class="container">
+        
+        <div class="solution-card">
+            <span class="tag">Étape 01</span>
+            <h2>Réinitialiser tes antennes</h2>
+            <p>On l'a vu en chimie : ton cerveau débranche ses "antennes" quand il y a trop de spam dopaminergique. Pour qu'elles se réactivent, il n'y a qu'une solution : le calme.</p>
+            <h3>La détox de 24h</h3>
+            <p>Essaie une journée sans réseaux. Au début, ton cerveau va hurler (le manque), mais après quelques heures, ton niveau de dopamine de base va se stabiliser. Tu vas redécouvrir que lire un livre ou marcher dehors n'est pas "ennuyeux", c'est juste que ton cerveau a retrouvé sa sensibilité.</p>
+        </div>
+
+        <div class="solution-card" style="border-color: var(--blue); box-shadow: 12px 12px 0 var(--blue);">
+            <span class="tag" style="background: var(--blue);">Étape 02</span>
+            <h2> Hacker l'interface</h2>
+            <p>Puisque les ingénieurs utilisent la couleur et les notifications pour exciter ton <b>ATV</b> (ton bouton Start), change les règles du jeu.</p>
+            <div class="tip-box">
+                💡 PASSE TON ÉCRAN EN GRIS : Sans les couleurs flashy, ton cerveau est beaucoup moins stimulé. TikTok en noir et blanc, c'est tout de suite moins addictif.
+            </div>
+            <h3>Tue les notifications</h3>
+            <p>Ne laisse que les messages des vrais humains. Enlève les "likes", les "news" et les rappels. Si c'est toi qui décides d'ouvrir l'appli, c'est ton <b>CPF (ton manager)</b> qui commande. Si c'est une notif qui t'appelle, c'est ton impulsion qui gagne.</p>
+        </div>
+
+        <div class="solution-card" style="border-color: var(--pink); box-shadow: 12px 12px 0 var(--pink);">
+            <span class="tag" style="background: var(--pink);">Étape 03</span>
+            <h2>Remettre du "Coût" dans l'effort</h2>
+            <p>La dopamine adore la facilité. Pour aider ton manager (le Cortex Préfrontal), rends le scroll difficile.</p>
+            <p>Désinstalle les applis les plus addictives et force-toi à passer par le navigateur web de ton tel. Devoir te reconnecter à chaque fois ajoute un "coût" à l'action. Ton cerveau va alors recalculer : <i>"Est-ce que ça vaut vraiment le coup de faire tout ça pour 2 min de scroll ?"</i> Souvent, la réponse sera non.</p>
+        </div>
+
+    </main>
+
+    <footer>
+        <div style="max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.5fr 1fr; gap: 60px;">
+            <div>
+                <h3 style="text-transform: uppercase; color: var(--yellow); font-size: 1.5rem; margin-top: 0;">Communiquer la science</h3>
+                <p style="color: #94a3b8;">On t'aide à comprendre ton cerveau pour que tu puisses enfin poser ton tel sans avoir l'impression de rater ta vie.</p>
+            </div>
+            <div>
+                <h4 style="text-transform: uppercase; font-size: 0.9rem; color: white; margin-bottom: 25px;">Plan du dossier</h4>
+                <div style="display: grid; grid-template-columns: 1fr; gap: 10px;">
+                    <a href="index.html" style="color: white; text-decoration: none;">→ ACCUEIL</a>
+                    <a href="anatomie.html" style="color: white; text-decoration: none;">→ 01. CIRCUIT</a>
+                    <a href="chimie.html" style="color: white; text-decoration: none;">→ 02. MESSAGER</a>
+                    <a href="mecanisme.html" style="color: white; text-decoration: none;">→ 03. MOTIVATION</a>
+                    <a href="addiction.html" style="color: white; text-decoration: none;">→ 04. USAGES</a>
+                    <a href="solutions.html" style="color: var(--yellow); text-decoration: none;">→ 05. SOLUTIONS</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
